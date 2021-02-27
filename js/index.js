@@ -43,11 +43,11 @@ function initClient() {
 function updateSigninStatus(isSignedIn) {
     if(isSignedIn) {
         logInButton.style.display = "none";
-        signoutButton.style.display = 'block';
+        logOutButton.style.display = 'block';
         listUpcomingEvents();
     } else {
-        authorizeButton.style.display = 'block';
-        signoutButton.style.display = 'none';
+        logInButton.style.display = 'block';
+        logOutButton.style.display = 'none';
     }
 }
 
