@@ -18,6 +18,7 @@ function handleClientLoad() {
 
 function initClient() {
     console.log('initClient');
+    
     gapi.client.init({
         apiKey: config.apiKey,
         clientId: config.clientId,
