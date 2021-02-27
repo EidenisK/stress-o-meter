@@ -166,7 +166,7 @@ function listUpcomingEvents() {
             monthDayInfo.push({
                 'date': moment().startOf("month").add(i, "days").format("YYYY-MM-DD"),
                 'numOfAssignments': tasks[i],
-                'score': score[i]*10
+                'score': (score[i]*10).toFixed(2)
             });
         }
         
