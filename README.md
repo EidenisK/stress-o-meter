@@ -2,8 +2,7 @@
 
 ## KTU GIFTed team: 
 
-Monika Bačkeriūtė  
-Eidenis Kasperavičius  
-Simonas Riauka  
-Gintaras Stankevičius  
-
+🎓 Monika Bačkeriūtė  
+🎓 Eidenis Kasperavičius  
+🎓 Simonas Riauka  
+🎓 Gintaras Stankevičius  
