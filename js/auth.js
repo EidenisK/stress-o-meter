@@ -48,8 +48,9 @@ function updateSigninStatus(isSignedIn) {
         });
         
     } else {
-        logInButton.style.display = 'block';
+        document.getElementById("loginBody").style.visibility = "none";
         logOutButton.style.display = 'none';
+
     }
 }
 
