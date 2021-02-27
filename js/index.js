@@ -165,6 +165,7 @@ function calculateStress() {
             }
         }
 
+        console.log(score);
         for(let i = 1; i <= parseInt(monthEndDate.format("D")); i++) {
             monthDayInfo.push({
                 'date': moment().startOf("month").add(i, "days").format("YYYY-MM-DD"),
