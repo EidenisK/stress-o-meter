@@ -4,6 +4,8 @@ let config = {
     apiKey: "AIzaSyDpzC52LL7rOGsowOGEYvqf-PyfL49EBR0"
 };
 
+let assignments = [];
+
 console.log("i'll do my lil dancy dance");
 
 var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
@@ -76,14 +78,19 @@ function listUpcomingEvents() {
         if(events.length > 0) {
             for(let i = 0; i < events.length; i++) {
                 var event = events[i];
-                let sum = event.summary.toLowerCase();
+                let summary = event.summary.toLowerCase();
                 var when = event.start.dateTime;
                 if(!when) {
                     when = event.start.date;
                 }
 
-                if(sum.includes("assignment") || sum.includes("exam")) {
-                    appendPre(sum);
+                if(summary.includes("assignment") || summary.includes("exam")) {
+                    assignments.push({
+                        "name": summary,
+                        "date": when.toISOString(),
+                        "impact": (summary.includes("exam") ? 2.0 : 1.0)
+                    });
+                    appendPre(summary);
                 }
             }
         } else {
