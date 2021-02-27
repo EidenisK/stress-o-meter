@@ -32,7 +32,7 @@ function updateSigninStatus(isSignedIn) {
 
         let profile = gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile();
         document.getElementById("avatar-image").setAttribute("src", profile.getImageUrl());
-        document.getElementById("avatar-name").innerHTML(profile.getName());
+        document.getElementById("avatar-name").innerHTML = profile.getName();
 
 
         const credential = firebase.auth.GoogleAuthProvider.credential(
@@ -48,7 +48,7 @@ function updateSigninStatus(isSignedIn) {
         });
         
     } else {
-        document.getElementById("loginBody").style.visibility = "none";
+        document.getElementById("loginBody").style.visibility = "visible";
         logOutButton.style.display = 'none';
 
     }
