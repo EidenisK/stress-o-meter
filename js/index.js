@@ -109,8 +109,6 @@ function listUpcomingEvents() {
                     moment(when).add(-delta, "days").toISOString()
                 ] = baseNumber/Math.pow(daliklis, delta) -1;
             }
-            console.log(when);
-            console.log(stressPerDay);
 
             // check each of the 7 days if they are in this month, if so, increase day score
             for(const dateBeforeExam in stressPerDay) {
@@ -118,7 +116,6 @@ function listUpcomingEvents() {
                     score[
                         moment(dateBeforeExam).format("D")
                     ] += stressPerDay[dateBeforeExam];
-                    console.log(`Added ${stressPerDay[dateBeforeExam]} to ${moment(dateBeforeExam).format("D")}`);
                 }
             }
         }
