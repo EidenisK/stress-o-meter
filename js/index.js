@@ -12,6 +12,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 let db = firebase.firestore();
+let userId;
 
 let config = {
     clientId: "224492503332-3o7i3da82k1u7pnm2esp3pu7jk0nln10.apps.googleusercontent.com",
@@ -69,6 +70,7 @@ function updateSigninStatus(isSignedIn) {
             access_token
         );
         firebase.auth().signInWithCredential(credential).then(() => {
+            userId = firebase.auth().currentUser.uid;
             getBaseNumber().then(listUpcomingEvents());
         });
         
@@ -79,17 +81,20 @@ function updateSigninStatus(isSignedIn) {
 }
 
 async function getBaseNumber() {
-    let userId = firebase.auth().currentUser.uid;
     db.collection('users').doc(userId).get().then((doc) => {
         if(!doc.exists) {
-            db.collection('users').doc(userId).set({
-                baseNumber: 1
-            });
-            baseNumber = 1;
+            setBaseNumber(1);
         } else {
             baseNumber = doc.data().baseNumber;
         }
     });
+}
+
+async function setBaseNumber(n) {
+    db.collection('users').doc(userId).set({
+        baseNumber: n
+    });
+    baseNumber = n;
 }
 
 function handleAuthClick(event) {
