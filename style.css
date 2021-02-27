@@ -128,18 +128,21 @@
     grid-template-columns: repeat(7, 1fr);  
   }
   .calendar__week {
-    grid-auto-rows: 16.66%;
+    height: 15%;
+    grid-auto-rows: 100%;
     text-align: right;
   }
   
   .calendar__header {
-    grid-auto-rows: 50px;
+    height: 10%;
+    grid-auto-rows: 100%;
     align-items: center;
     text-align: center;
   }
   
   .calendar__day {
     height: 100%;
+    box-sizing: border-box;
     padding: 16px;
   }
   
