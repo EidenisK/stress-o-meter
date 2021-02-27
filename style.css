@@ -176,7 +176,7 @@
   }
   
   .menu__item {
-    text-transform: uppercase;
+    text-transform: none;
     font-size: 0.7rem;
     font-weight: 500;
     padding: 16px 16px 16px 14px;
@@ -184,6 +184,11 @@
     color: inherit;
     text-decoration: none;
     transition: color ease 0.3s;
+  }
+
+  #tipTitle {
+    text-transform: uppercase;
+    font-weight: bold;
   }
   
   .menu__item--active .menu__icon {
