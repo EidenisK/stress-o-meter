@@ -18,6 +18,10 @@
         alert(ats);
         document.getElementById("qstBody").style.visibility = "hidden"; 
     }
+
+    function ClickedGoogle(){
+        alert("Veikia")
+    }
 </script>
 
 <head>
@@ -26,6 +30,8 @@
     <link rel="stylesheet" href="style.css">
     <title>Stress-O-meter</title>
     <script src="./js/index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
     <div class="wrapper">
@@ -143,7 +149,20 @@
             <div class="copyright">copyright &copy; 2021</div>
         </sidebar>
     </div>
-        <div id="qstBody", class="qstBody">
+    <div class="loginBody">
+        <div style="padding-top: 5%">
+            <div class="loginContainer">
+                <img src="img/ExtendedLogo.png"  alt="Stress-O-Meter" class="loginCenter">
+                <p class ="loginDescription">A web app for monitoring your stress levels</p>
+                <div class="loginDiv">
+                    <a href="#" class="google btn" onclick="ClickedGoogle();" id="logInButton">
+                        <i class="fa fa-google fa-fw"></i> Login with Google
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="qstBody", class="qstBody">
             <h1 class="qstText">Questions</h1>
             <p class="qstText">In the last month, how ofted have you been upset because of something that happened unexpectedly?</p>
             <div class="qstCenter">
