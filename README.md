@@ -5,12 +5,12 @@
 
 ## Team: 
 
-|          Member:          |   Discord username:   |   Programing skill level:   |
-| ------------------------- |:---------------------:| ---------------------------:|
-| 🎓 Monika Bačkieriūtė     | Moni#1280            | Intermediate |
-| 🎓 Eidenis Kasperavičius  | Dusulys#2638         | Advanced |
-| 🎓 Simonas Riauka         | ANANAS#6800          | Beginner |
-| 🎓 Gintaras Stankevičius  | GSdcdc3117#8300      | Beginner |
+| Member: | Discord username: | Programing skill level: |
+| :------------------------- |:---------------------:| :---------------------------:|
+| 🎓 Monika Bačkieriūtė     | Moni#1280 | Intermediate |
+| 🎓 Eidenis Kasperavičius  | Dusulys#2638 | Advanced |
+| 🎓 Simonas Riauka         | ANANAS#6800 | Beginner |
+| 🎓 Gintaras Stankevičius  | GSdcdc3117#8300 | Beginner |
 
                                
                                
