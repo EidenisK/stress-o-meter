@@ -68,9 +68,10 @@ function updateSigninStatus(isSignedIn) {
             id_token,
             access_token
         );
-        firebase.auth().signInWithCredential(credential);
-
-        getBaseNumber().then(listUpcomingEvents());
+        firebase.auth().signInWithCredential(credential).then(() => {
+            getBaseNumber().then(listUpcomingEvents());
+        });
+        
     } else {
         logInButton.style.display = 'block';
         logOutButton.style.display = 'none';
