@@ -11,6 +11,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+let db = firebase.firestore();
 
 let config = {
     clientId: "224492503332-3o7i3da82k1u7pnm2esp3pu7jk0nln10.apps.googleusercontent.com",
@@ -18,7 +19,7 @@ let config = {
     apiKey: "AIzaSyDpzC52LL7rOGsowOGEYvqf-PyfL49EBR0"
 };
 
-let monthDayInfo = [];
+var monthDayInfo = [];
 
 console.log("i'll do my lil dancy dance");
 
@@ -69,12 +70,18 @@ function updateSigninStatus(isSignedIn) {
         );
         firebase.auth().signInWithCredential(credential);
 
-
-        listUpcomingEvents();
+        getBaseNumber().then(listUpcomingEvents());
     } else {
         logInButton.style.display = 'block';
         logOutButton.style.display = 'none';
     }
+}
+
+async function getBaseNumber() {
+    let userId = firebase.auth().currentUser.uid;
+    db.collection('users').doc(userId).get().then(doc => {
+        console.log(doc.data());
+    })
 }
 
 function handleAuthClick(event) {
