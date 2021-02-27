@@ -172,7 +172,7 @@ function listUpcomingEvents() {
         
         appendPre(`Date\t\tNumber of assignments\tStress level`)
         for(const mdi of monthDayInfo) {
-            appendPre(`${mdi.date}\t${mdi.numOfAssignments} \t${score}`);
+            appendPre(`${mdi.date}\t${mdi.numOfAssignments} \t${mdi.score}`);
         }
     })
 }
