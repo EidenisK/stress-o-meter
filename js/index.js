@@ -63,7 +63,7 @@ function appendPre(message) {
 }
 
 function listUpcomingEvents() {
-    let monthEndDate = momen().endOf("month");
+    let monthEndDate = moment().endOf("month");
     let kartotinis = 1.0;
     let daliklis = 1.219;
 
