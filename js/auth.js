@@ -24,6 +24,8 @@ function updateSigninStatus(isSignedIn) {
     logOutButton = document.getElementById("logOutButton");
 
     if(isSignedIn) {
+        document.getElementById("loginBody").style.visibility = "hidden";
+
         let id_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).id_token;
         let access_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token;
 
