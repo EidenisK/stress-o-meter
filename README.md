@@ -5,7 +5,12 @@
 
 ## Team: 
 
-🎓 Monika Bačkeriūtė  
+🎓 Monika Bačkieriūtė  +
 🎓 Eidenis Kasperavičius  
-🎓 Simonas Riauka  
+<<<<<<< HEAD
+🎓 Simonas Riauka +
 🎓 Gintaras Stankevičius  
+=======
+🎓 Simonas Riauka  
+🎓 Gintaras Stankevičius  +++
+>>>>>>> 278f064131ddcc46840d05ab4f1e0d775a39cab0
