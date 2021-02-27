@@ -104,7 +104,7 @@ function listUpcomingEvents() {
 
             // go through each day 7 days before assignment, calculate day's score
             let stressPerDay = {};
-            let currentDivisor = daliklis;
+            let currentDivisor = 1.0;
             for(let delta = 0; delta < 7; delta++) {
                 stressPerDay[
                     moment(moment(when).add(-delta, "days")).toISOString()
@@ -117,14 +117,14 @@ function listUpcomingEvents() {
                 if(moment(dateBeforeExam) < monthEndDate) {
                     score[
                         moment(dateBeforeExam).format("DD")
-                    ] = stressPerDay[dateBeforeExam];
+                    ] += stressPerDay[dateBeforeExam];
                 }
             }
         }
 
         for(let i = 1; i <= parseInt(monthEndDate.format("DD")); i++) {
             monthDayInfo.push({
-                'date': moment().startOf("month").add(i-1, "days").toISOString(),
+                'date': moment().startOf("month").add(i, "days").toISOString(),
                 'numOfAssignments': tasks[i],
                 'score': score[i]
             });
