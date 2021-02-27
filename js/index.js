@@ -113,6 +113,7 @@ async function setBaseNumber(n) {
 
 //-------------------- CALCULATION ---------------------------------
 function calculateStress() {
+    console.log(baseNumber);
     let monthEndDate = moment().endOf("month");
     let daliklis = Math.pow(baseNumber, 1/7);
 
@@ -154,8 +155,6 @@ function calculateStress() {
                     moment(when).add(-delta, "days").toISOString()
                 ] = baseNumber/Math.pow(daliklis, delta) -1;
             }
-
-            console.log(stressPerDay);
 
             // check each of the 7 days if they are in this month, if so, increase day score
             for(const dateBeforeExam in stressPerDay) {
