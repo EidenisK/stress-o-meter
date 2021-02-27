@@ -1,4 +1,6 @@
 git pull origin master
 git add .
-git commit -m "changes"
+echo enter commit name:
+read var1
+git commit -m $var1
 git push origin master
