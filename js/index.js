@@ -4,7 +4,7 @@ let config = {
     apiKey: "AIzaSyDpzC52LL7rOGsowOGEYvqf-PyfL49EBR0"
 };
 
-let assignments = [];
+let monthDayInfo = [];
 
 console.log("i'll do my lil dancy dance");
 
@@ -69,7 +69,7 @@ function listUpcomingEvents() {
 
     let tasks = [];
     let score = [];
-    for(let i = 0; i < int(monthEndDate.format("DD")); i++) {
+    for(let i = 1; i <= int(monthEndDate.format("DD")); i++) {
         tasks[i] = 0;
         score[i] = 0;
     }        
@@ -120,6 +120,14 @@ function listUpcomingEvents() {
                     ] = stressPerDay[dateBeforeExam];
                 }
             }
+        }
+
+        for(let i = 1; i <= int(monthEndDate.format("DD")); i++) {
+            monthDayInfo.push({
+                'date': moment().startOf("month").add(i-1).toISOString(),
+                'numOfAssignments': tasks[i],
+                'score': score[i]
+            });
         }
     })
 }
