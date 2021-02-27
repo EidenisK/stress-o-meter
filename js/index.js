@@ -107,7 +107,7 @@ function listUpcomingEvents() {
             for(let delta = 0; delta < 8; delta++) {
                 stressPerDay[
                     moment(moment(when).add(-delta, "days")).toISOString()
-                ] = baseNumber/Math.pow(daliklis, delta +1) -1;
+                ] = baseNumber/Math.pow(daliklis, delta) -1;
             }
 
             // check each of the 7 days if they are in this month, if so, increase day score
