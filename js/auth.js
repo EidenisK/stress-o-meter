@@ -24,11 +24,15 @@ function updateSigninStatus(isSignedIn) {
     logOutButton = document.getElementById("logOutButton");
 
     if(isSignedIn) {
-        logInButton.style.display = "none";
-        logOutButton.style.display = 'block';
+        document.getElementById("loginBody").style.visibility = "hidden";
 
         let id_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).id_token;
         let access_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token;
+
+        let profile = gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile();
+        document.getElementById("avatar-image").setAttribute("src", profile.getImageUrl());
+        document.getElementById("avatar-name").innerHTML = profile.getName();
+
 
         const credential = firebase.auth.GoogleAuthProvider.credential(
             id_token,
@@ -43,8 +47,7 @@ function updateSigninStatus(isSignedIn) {
         });
         
     } else {
-        logInButton.style.display = 'block';
-        logOutButton.style.display = 'none';
+        document.getElementById("loginBody").style.visibility = "visible";
     }
 }
 

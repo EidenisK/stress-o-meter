@@ -53,15 +53,15 @@ function calculateStress() {
 
         for(let i = 1; i <= parseInt(monthEndDate.format("D")); i++) {
             monthDayInfo.push({
-                'date': moment().startOf("month").add(i, "days").format("YYYY-MM-DD"),
+                'date': moment().startOf("month").add(i -1, "days").format("YYYY-MM-DD"),
                 'numOfAssignments': tasks[i],
-                'score': (score[i]*10).toFixed(2)
+                'score': score[i].toFixed(2)
             });
         }
         
-        appendPre(`Date\t\tNumber of assignments\tStress level`)
+        /*appendPre(`Date\t\tNumber of assignments\tStress level`)
         for(const mdi of monthDayInfo) {
             appendPre(`${mdi.date}\t\t${mdi.numOfAssignments}\t\t${mdi.score}`);
-        }
+        }*/
     })
 }
