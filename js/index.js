@@ -17,27 +17,20 @@ function handleClientLoad() {
 }
 
 function initClient() {
-    console.log('initClient');
-
     gapi.client.init({
         apiKey: config.apiKey,
         clientId: config.clientId,
         discoveryDocs: DISCOVERY_DOCS,
         scope: SCOPES
     }).then(function() {
-        console.log('add onclick func');
         gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
         updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
         
         logInButton.onclick = handleAuthClick;
         logOutButton.onclick = handleSignoutClick;
-        
     }, function(error) {
-        console.log('eeeee');
         appendPre(JSON.stringify(error, null, 2));
     });
-
-    console.log('a');
 }
 
 function updateSigninStatus(isSignedIn) {
@@ -71,10 +64,11 @@ function appendPre(message) {
 function listUpcomingEvents() {
     gapi.client.calendar.events.list({
         'calendarId': 'primary',
-        'timeMin': (new Date()).toISOString(),
+        'timeMin': moment().startOf("month").toISOString(),
+        'timeMax': moment().endOf("month").toISOString(),
         'showDeleted': false,
+        'maxResults': 2500,
         'singleEvents': true,
-        'maxResults': 10,
         'orderBy': 'startTime'
     }).then(function(response) {
         var events = response.result.items;
@@ -83,12 +77,16 @@ function listUpcomingEvents() {
         if(events.length > 0) {
             for(let i = 0; i < events.length; i++) {
                 var event = events[i];
+                let desc = event.description.toLowerCase();
                 var when = event.start.dateTime;
                 if(!when) {
                     when = event.start.date;
                 }
 
-                appendPre(event.summary + ' (' + when + ')');
+                if(desc.includes("assignment") || desc.includes("exam")) {
+                    appendPre(event.summary);
+                    appendPre(event.description);
+                }
             }
         } else {
             appendPre('No upcoming events found');
