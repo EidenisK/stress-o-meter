@@ -77,15 +77,14 @@ function listUpcomingEvents() {
         if(events.length > 0) {
             for(let i = 0; i < events.length; i++) {
                 var event = events[i];
-                let desc = event.description.toLowerCase();
+                let sum = event.summary.toLowerCase();
                 var when = event.start.dateTime;
                 if(!when) {
                     when = event.start.date;
                 }
 
-                if(desc.includes("assignment") || desc.includes("exam")) {
-                    appendPre(event.summary);
-                    appendPre(event.description);
+                if(sum.includes("assignment") || sum.includes("exam")) {
+                    appendPre(sum);
                 }
             }
         } else {
