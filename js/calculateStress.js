@@ -53,7 +53,7 @@ function calculateStress() {
 
         for(let i = 1; i <= parseInt(monthEndDate.format("D")); i++) {
             monthDayInfo.push({
-                'date': moment().startOf("month").add(i, "days").format("YYYY-MM-DD"),
+                'date': moment().startOf("month").add(i -1, "days").format("YYYY-MM-DD"),
                 'numOfAssignments': tasks[i],
                 'score': score[i].toFixed(2)
             });
