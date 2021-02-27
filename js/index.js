@@ -63,10 +63,21 @@ function appendPre(message) {
 }
 
 function listUpcomingEvents() {
+    let monthEndDate = momen().endOf("month");
+    let kartotinis = 1.0;
+    let daliklis = 1.219;
+
+    let tasks = [];
+    let score = [];
+    for(let i = 0; i < int(monthEndDate.format("DD")); i++) {
+        tasks[i] = 0;
+        score[i] = 0;
+    }        
+
     gapi.client.calendar.events.list({
         'calendarId': 'primary',
         'timeMin': moment().startOf("month").toISOString(),
-        'timeMax': moment().endOf("month").toISOString(),
+        'timeMax': moment().endOf("month").add(1, "month").toISOString(),
         'showDeleted': false,
         'maxResults': 2500,
         'singleEvents': true,
@@ -74,27 +85,41 @@ function listUpcomingEvents() {
     }).then(function(response) {
         var events = response.result.items;
         appendPre('Upcoming events:');
+        if(events.length == 0) {
+            appendPre('No upcoming events found');
+        }
 
-        if(events.length > 0) {
-            for(let i = 0; i < events.length; i++) {
-                var event = events[i];
-                let summary = event.summary.toLowerCase();
-                var when = event.start.dateTime;
-                if(!when) {
-                    when = event.start.date;
-                }
+        for(let i = 0; i < events.length; i++) {
+            // check if event is an assignment
+            let summary = events[i].summary.toLowerCase();
+            if(!summary.includes("assignment") && !summary.includes("exam")) {
+                continue;
+            }
 
-                if(summary.includes("assignment") || summary.includes("exam")) {
-                    assignments.push({
-                        "name": summary,
-                        "date": when,
-                        "impact": (summary.includes("exam") ? 2.0 : 1.0)
-                    });
-                    appendPre(summary);
+            // get event date, increase amount of tasks that day
+            var when = events[i].start.dateTime ?? events[i].start.date;
+            if(moment(when) <= monthEndDate) {
+                tasksInDay[int(moment(when).format("DD"))]++; 
+            } 
+
+            // go through each day 7 days before assignment, calculate day's score
+            let stressPerDay = {};
+            let currentDivisor = daliklis;
+            for(const delta = 0; delta < 7; delta++) {
+                stressPerDay[
+                    moment(moment(when).add(-delta, "days")).toISOString()
+                ] = float(kartotinis)/float(currentDivisor);
+                currentDivisor *= float(daliklis);
+            }
+
+            // check each of the 7 days if they are in this month, if so, increase day score
+            for(const dateBeforeExam in stressPerDay) {
+                if(moment(dateBeforeExam) < monthEndDate) {
+                    score[
+                        moment(dateBeforeExam).format("DD")
+                    ] = stressPerDay[dateBeforeExam];
                 }
             }
-        } else {
-            appendPre('No upcoming events found');
         }
     })
 }
