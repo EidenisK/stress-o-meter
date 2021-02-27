@@ -118,6 +118,7 @@ function listUpcomingEvents() {
                     score[
                         moment(dateBeforeExam).format("DD")
                     ] += stressPerDay[dateBeforeExam];
+                    console.log(`Added ${stressPerDay[dateBeforeExam]} to ${moment(dateBeforeExam).format("DD")}`);
                 }
             }
         }
