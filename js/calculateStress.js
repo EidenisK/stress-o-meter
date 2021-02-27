@@ -58,6 +58,8 @@ function calculateStress() {
                 'score': score[i].toFixed(2)
             });
         }
+
+        loadColors();
         
         /*appendPre(`Date\t\tNumber of assignments\tStress level`)
         for(const mdi of monthDayInfo) {
