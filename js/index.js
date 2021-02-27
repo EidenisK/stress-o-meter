@@ -97,6 +97,7 @@ function handleSignoutClick(event) {
 async function getBaseNumber() {
     db.collection('users').doc(userId).get().then((doc) => {
         if(!doc.exists) {
+            console.log("Creating new base number...");
             setBaseNumber(1);
         } else {
             baseNumber = doc.data().baseNumber;
