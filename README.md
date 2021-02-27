@@ -1,8 +1,9 @@
-# WarwickTECH hackathon 27 Feb 2021
+# WarwickTECH hackathon (27 Feb 2021)
 
+<img src="https://en.ktu.edu/wp-content/uploads/sites/5/2016/08/KTU-EN.svg" height="100" />
+<img src="https://studentams.ktu.edu/wp-content/uploads/sites/54/2016/09/Gifted.png" height="100" />
 
-![Kaunas University of Technology](https://en.ktu.edu/wp-content/uploads/sites/5/2016/08/KTU-EN.svg)
-## KTU GIFTed team: 
+## Team: 
 
 🎓 Monika Bačkeriūtė  
 🎓 Eidenis Kasperavičius  
