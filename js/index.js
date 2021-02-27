@@ -87,7 +87,6 @@ async function getBaseNumber() {
             });
             baseNumber = 1;
         } else {
-            console.log(doc.data());
             baseNumber = doc.data().baseNumber;
         }
     });
@@ -131,10 +130,6 @@ function listUpcomingEvents() {
         'orderBy': 'startTime'
     }).then(function(response) {
         var events = response.result.items;
-        appendPre('Upcoming events:');
-        if(events.length == 0) {
-            appendPre('No upcoming events found');
-        }
 
         for(let i = 0; i < events.length; i++) {
             // check if event is an assignment
@@ -173,6 +168,11 @@ function listUpcomingEvents() {
                 'numOfAssignments': tasks[i],
                 'score': score[i]*10
             });
+        }
+        
+        appendPre(`Date\t\tNumber of assignments\tStress level`)
+        for(const mdi of monthDayInfo) {
+            appendPre(`${mdi.date}\t${mdi.numOfAssignments} \t${score}`);
         }
     })
 }
