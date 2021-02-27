@@ -1,5 +1,24 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
+<script>
+    function QuestionaireDone() {
+        a1 = parseInt(document.querySelector('input[name="q1"]:checked').value);
+        a2 = parseInt(document.querySelector('input[name="q2"]:checked').value);
+        a3 = parseInt(document.querySelector('input[name="q3"]:checked').value);
+        a4 = parseInt(document.querySelector('input[name="q4"]:checked').value);
+        a5 = parseInt(document.querySelector('input[name="q5"]:checked').value);
+        a6 = parseInt(document.querySelector('input[name="q6"]:checked').value);
+        a7 = parseInt(document.querySelector('input[name="q7"]:checked').value);
+        a8 = parseInt(document.querySelector('input[name="q8"]:checked').value);
+        a9 = parseInt(document.querySelector('input[name="q9"]:checked').value);
+        a10 = parseInt(document.querySelector('input[name="q10"]:checked').value);
+
+        ats = a1 + a2 + a3 + a6 + a9 + a10 - a4 - a5 - a7 - a8 + 14;
+        alert(ats);
+    }
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -130,27 +149,27 @@
             <div class="qstCenter">
                 <label class="container">
                     Never
-                    <input type="radio" , name="q1" checked>
+                    <input type="radio" , name="q1", value="1" checked>
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Almost never
-                    <input type="radio" , name="q1">
+                    <input type="radio" , name="q1", value="2" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Sometimes
-                    <input type="radio" , name="q1">
+                    <input type="radio" , name="q1", value="3" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Fairly often
-                    <input type="radio" , name="q1">
+                    <input type="radio" , name="q1", value="4" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Very often
-                    <input type="radio" , name="q1">
+                    <input type="radio" , name="q1", value="5" >
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -158,27 +177,27 @@
             <div class="qstCenter">
                 <label class="container">
                     Never
-                    <input type="radio" , name="q2" checked>
+                    <input type="radio" , name="q2", value="1"  checked>
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Almost never
-                    <input type="radio" , name="q2">
+                    <input type="radio" , name="q2", value="2" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Sometimes
-                    <input type="radio" , name="q2">
+                    <input type="radio" , name="q2", value="3" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Fairly often
-                    <input type="radio" , name="q2">
+                    <input type="radio" , name="q2", value="4" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Very often
-                    <input type="radio" , name="q2">
+                    <input type="radio" , name="q2", value="5" >
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -186,27 +205,27 @@
             <div class="qstCenter">
                 <label class="container">
                     Never
-                    <input type="radio" , name="q3" checked>
+                    <input type="radio" , name="q3", value="1"  checked>
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Almost never
-                    <input type="radio" , name="q3">
+                    <input type="radio" , name="q3", value="2" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Sometimes
-                    <input type="radio" , name="q3">
+                    <input type="radio" , name="q3", value="3" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Fairly often
-                    <input type="radio" , name="q3">
+                    <input type="radio" , name="q3", value="4" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Very often
-                    <input type="radio" , name="q3">
+                    <input type="radio" , name="q3", value="5" >
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -214,27 +233,27 @@
             <div class="qstCenter">
                 <label class="container">
                     Never
-                    <input type="radio" , name="q4" checked>
+                    <input type="radio" , name="q4", value="1"  checked>
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Almost never
-                    <input type="radio" , name="q4">
+                    <input type="radio" , name="q4", value="2" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Sometimes
-                    <input type="radio" , name="q4">
+                    <input type="radio" , name="q4", value="3" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Fairly often
-                    <input type="radio" , name="q4">
+                    <input type="radio" , name="q4", value="4" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Very often
-                    <input type="radio" , name="q4">
+                    <input type="radio" , name="q4", value="5" >
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -242,27 +261,27 @@
             <div class="qstCenter">
                 <label class="container">
                     Never
-                    <input type="radio" , name="q5" checked>
+                    <input type="radio" , name="q5", value="1"  checked>
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Almost never
-                    <input type="radio" , name="q5">
+                    <input type="radio" , name="q5", value="2" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Sometimes
-                    <input type="radio" , name="q5">
+                    <input type="radio" , name="q5", value="3">
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Fairly often
-                    <input type="radio" , name="q5">
+                    <input type="radio" , name="q5", value="4" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Very often
-                    <input type="radio" , name="q5">
+                    <input type="radio" , name="q5", value="5" >
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -270,27 +289,55 @@
             <div class="qstCenter">
                 <label class="container">
                     Never
-                    <input type="radio" , name="q6" checked>
+                    <input type="radio" , name="q6", value="1"  checked>
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Almost never
-                    <input type="radio" , name="q6">
+                    <input type="radio" , name="q6", value="2" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Sometimes
-                    <input type="radio" , name="q6">
+                    <input type="radio" , name="q6", value="3" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Fairly often
-                    <input type="radio" , name="q6">
+                    <input type="radio" , name="q6", value="4" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Very often
-                    <input type="radio" , name="q6">
+                    <input type="radio" , name="q6", value="5" >
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <p class="qstText">In the last month, how often have you been able to control irrations in your life?</p>
+            <div class="qstCenter">
+                <label class="container">
+                    Never
+                    <input type="radio" , name="q7", value="1"  checked>
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                    Almost never
+                    <input type="radio" , name="q7", value="2" >
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                    Sometimes
+                    <input type="radio" , name="q7", value="3" >
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                    Fairly often
+                    <input type="radio" , name="q7", value="4" >
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                    Very often
+                    <input type="radio" , name="q7", value="5" >
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -298,55 +345,27 @@
             <div class="qstCenter">
                 <label class="container">
                     Never
-                    <input type="radio" , name="q7" checked>
+                    <input type="radio" , name="q8", value="1"  checked>
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Almost never
-                    <input type="radio" , name="q7">
+                    <input type="radio" , name="q8", value="2" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Sometimes
-                    <input type="radio" , name="q7">
+                    <input type="radio" , name="q8", value="3" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Fairly often
-                    <input type="radio" , name="q7">
+                    <input type="radio" , name="q8", value="4" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Very often
-                    <input type="radio" , name="q7">
-                    <span class="checkmark"></span>
-                </label>
-            </div>
-            <p class="qstText">In the last month, how often have you felt that you were on top of things?</p>
-            <div class="qstCenter">
-                <label class="container">
-                    Never
-                    <input type="radio" , name="q8" checked>
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                    Almost never
-                    <input type="radio" , name="q8">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                    Sometimes
-                    <input type="radio" , name="q8">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                    Fairly often
-                    <input type="radio" , name="q8">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                    Very often
-                    <input type="radio" , name="q8">
+                    <input type="radio" , name="q8", value="5" >
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -354,27 +373,27 @@
             <div class="qstCenter">
                 <label class="container">
                     Never
-                    <input type="radio" , name="q9" checked>
+                    <input type="radio" , name="q9", value="1"  checked>
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Almost never
-                    <input type="radio" , name="q9">
+                    <input type="radio" , name="q9", value="2" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Sometimes
-                    <input type="radio" , name="q9">
+                    <input type="radio" , name="q9", value="3" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Fairly often
-                    <input type="radio" , name="q9">
+                    <input type="radio" , name="q9", value="4" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Very often
-                    <input type="radio" , name="q9">
+                    <input type="radio" , name="q9", value="5" >
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -382,32 +401,32 @@
             <div class="qstCenter">
                 <label class="container">
                     Never
-                    <input type="radio" , name="q10" checked>
+                    <input type="radio" , name="q10", value="1"  checked>
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Almost never
-                    <input type="radio" , name="q10">
+                    <input type="radio" , name="q10", value="2" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Sometimes
-                    <input type="radio" , name="q10">
+                    <input type="radio" , name="q10", value="3" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Fairly often
-                    <input type="radio" , name="q10">
+                    <input type="radio" , name="q10", value="4" >
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">
                     Very often
-                    <input type="radio" , name="q10">
+                    <input type="radio" , name="q10", value="5" >
                     <span class="checkmark"></span>
                 </label>
             </div>
 
-            <a class="menu__item" href = "#">
+            <a class="menu__item" href="#" onclick="QuestionaireDone();">
                 <i class="menu_icon fa fa-envelope"></i>
                 <span class="menu_text qstRight">Complete</span>
             </a>
