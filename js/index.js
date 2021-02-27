@@ -106,7 +106,7 @@ async function getBaseNumber() {
 }
 
 async function setBaseNumber(n) {
-    db.collection('users').doc(userId).set({
+    await db.collection('users').doc(userId).set({
         baseNumber: n
     });
     baseNumber = n;
@@ -116,7 +116,6 @@ async function setBaseNumber(n) {
 
 //-------------------- CALCULATION ---------------------------------
 function calculateStress() {
-    console.log(baseNumber);
     let monthEndDate = moment().endOf("month");
     let daliklis = Math.pow(baseNumber, 1/7);
 
