@@ -105,7 +105,7 @@ function listUpcomingEvents() {
             // go through each day 7 days before assignment, calculate day's score
             let stressPerDay = {};
             let currentDivisor = daliklis;
-            for(const delta = 0; delta < 7; delta++) {
+            for(let delta = 0; delta < 7; delta++) {
                 stressPerDay[
                     moment(moment(when).add(-delta, "days")).toISOString()
                 ] = parseFloat(kartotinis)/parseFloat(currentDivisor);
