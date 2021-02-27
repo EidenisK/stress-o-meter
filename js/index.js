@@ -87,7 +87,7 @@ function listUpcomingEvents() {
                 if(summary.includes("assignment") || summary.includes("exam")) {
                     assignments.push({
                         "name": summary,
-                        "date": when.toISOString(),
+                        "date": when,
                         "impact": (summary.includes("exam") ? 2.0 : 1.0)
                     });
                     appendPre(summary);
