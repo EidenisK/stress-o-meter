@@ -47,10 +47,13 @@ async function getBaseNumber() {
 }
 
 async function setBaseNumber(n, date) {
-    await db.collection('users').doc(userId).set({
-        baseNumber: n,
-        date: date
-    });
+    let q = {
+        baseNumber: n
+    };
+    if(date) {
+        q.filledOut = date;
+    }
+    await db.collection('users').doc(userId).set(q);
     baseNumber = n;
     console.log("Created new base number");
 }
