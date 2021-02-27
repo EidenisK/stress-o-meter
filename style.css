@@ -231,7 +231,7 @@
   
   .calendar__day {
     border: 0;
-    background-color: #db7f7a;
+    /*background-color: #db7f7a;*/
   }
   
   .calendar__day:last-child {

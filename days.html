@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Stress-O-meter</title>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <main>
+      <div class="toolbar">
+        <div class="current-month"></div>
+      </div>
+      <div class="calendar">
+        <div class="calendar__header">
+          <div>mon</div>
+          <div>tue</div>
+          <div>wed</div>
+          <div>thu</div>
+          <div>fri</div>
+          <div>sat</div>
+          <div>sun</div>
+        </div>
+        <div class="calendar__week">
+          <div class="calendar__day day">
+            50
+            <div class="task">Task</div>
+          </div>
+          <div class="calendar__day day">2</div>
+          <div class="calendar__day day">3</div>
+          <div class="calendar__day day">4</div>
+          <div class="calendar__day day">5</div>
+          <div class="calendar__day day">6</div>
+          <div class="calendar__day day">7</div>
+        </div>
+        <div class="calendar__week">
+          <div class="calendar__day day">8</div>
+          <div class="calendar__day day">9</div>
+          <div class="calendar__day day">10</div>
+          <div class="calendar__day day">11</div>
+          <div class="calendar__day day">12</div>
+          <div class="calendar__day day">13</div>
+          <div class="calendar__day day">14</div>
+        </div>
+        <div class="calendar__week">
+          <div class="calendar__day day">15</div>
+          <div class="calendar__day day">16</div>
+          <div class="calendar__day day">17</div>
+          <div class="calendar__day day">18</div>
+          <div class="calendar__day day">19</div>
+          <div class="calendar__day day">20</div>
+          <div class="calendar__day day">21</div>
+        </div>
+        <div class="calendar__week">
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+        </div>
+        <div class="calendar__week">
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+        </div>
+        <div class="calendar__week">
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+          <div class="calendar__day day">0</div>
+        </div>
+      </div>
+    </main>
+    <sidebar>
+      <div class="logo">Stress-O-meter</div>
+      <div class="avatar">
+        <div class="avatar__img">
+          <img src="https://picsum.photos/70" alt="avatar">
+        </div>
+        <div class="avatar__name">John Smith</div>
+      </div>
+      <nav class="menu">
+        <a class="menu__item" href="#">
+          <i class="menu__icon fa fa-home"></i>
+          <span class="menu__text">overview</span>
+        </a>
+        <a class="menu__item" href="#">
+          <i class="menu__icon fa fa-envelope"></i>
+          <span class="menu__text">messages</span>
+        </a>
+        <a class="menu__item" href="#">
+          <i class="menu__icon fa fa-list"></i>
+          <span class="menu__text">workout</span>
+        </a>
+        <a class="menu__item menu__item--active" href="#">
+          <i class="menu__icon fa fa-calendar"></i>
+          <span class="menu__text">calendar</span>
+        </a>
+        <a class="menu__item" href="#">
+          <i class="menu__icon fa fa-bar-chart"></i>
+          <span class="menu__text">goals</span>
+        </a>
+        <a class="menu__item" href="#">
+          <i class="menu__icon fa fa-trophy"></i>
+          <span class="menu__text">achivements</span>
+        </a>
+        <a class="menu__item" href="#">
+          <i class="menu__icon fa fa-sliders"></i>
+          <span class="menu__text">measurements</span>
+        </a>
+      </nav>
+      <div class="copyright">copyright &copy; 2021</div>
+    </sidebar>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous"></script>
+  <script>
+    //let month = document.getElementsByClassName("current-month");
+    //monthDays.innerHTML = "Vasaris";
+    
+    let array = document.getElementsByClassName("calendar__day");
+
+    var monthDayInfo = [
+      { date: "2021-02-02", numOfAssignments: 0, score: "10.00" },
+      { date: "2021-02-03", numOfAssignments: 0, score: "10.00" },
+      { date: "2021-02-04", numOfAssignments: 0, score: "10.00" },
+      { date: "2021-02-05", numOfAssignments: 0, score: "10.00" },
+      { date: "2021-02-06", numOfAssignments: 0, score: "11.70" },
+      { date: "2021-02-07", numOfAssignments: 0, score: "13.69" },
+      { date: "2021-02-08", numOfAssignments: 0, score: "16.01" },
+      { date: "2021-02-09", numOfAssignments: 0, score: "18.73" },
+      { date: "2021-02-10", numOfAssignments: 0, score: "21.92" },
+      { date: "2021-02-11", numOfAssignments: 0, score: "27.34" },
+      { date: "2021-02-12", numOfAssignments: 1, score: "33.69" },
+      { date: "2021-02-13", numOfAssignments: 0, score: "16.01" },
+      { date: "2021-02-14", numOfAssignments: 0, score: "20.43" },
+      { date: "2021-02-15", numOfAssignments: 0, score: "25.61" },
+      { date: "2021-02-16", numOfAssignments: 0, score: "31.66" },
+      { date: "2021-02-17", numOfAssignments: 1, score: "38.73" },
+      { date: "2021-02-18", numOfAssignments: 0, score: "21.92" },
+      { date: "2021-02-19", numOfAssignments: 0, score: "25.64" },
+      { date: "2021-02-20", numOfAssignments: 1, score: "30.00" },
+      { date: "2021-02-21", numOfAssignments: 0, score: "10.00" },
+      { date: "2021-02-22", numOfAssignments: 0, score: "10.00" },
+      { date: "2021-02-23", numOfAssignments: 0, score: "10.00" },
+      { date: "2021-02-24", numOfAssignments: 0, score: "10.00" },
+      { date: "2021-02-25", numOfAssignments: 0, score: "10.00" },
+      { date: "2021-02-26", numOfAssignments: 0, score: "10.00" },
+      { date: "2021-02-27", numOfAssignments: 0, score: "10.00" },
+      { date: "2021-02-28", numOfAssignments: 0, score: "10.00" },
+      { date: "2021-03-01", numOfAssignments: 0, score: "10.00" }
+    ]
+
+    let today = new Date();
+    let monthDays = moment(today).daysInMonth();
+    let weekDay = moment(today).day();
+    let thisDay = moment(today).date();
+    let startWeekDay = moment(today).subtract(thisDay, 'days').day();
+    let thisMonth = moment(today).month();
+
+    for (let index = 0; index < startWeekDay; index++) {
+      const element = array[index];
+      element.innerHTML = "";
+    }
+
+    let dayOfMonth = 1;
+    for (let index = startWeekDay; index < startWeekDay + monthDays; index++) {
+      const element = array[index];
+      element.innerHTML = dayOfMonth;
+      dayOfMonth++;
+    }
+    for (let index = startWeekDay + monthDays; index < array.length; index++) {
+      const element = array[index];
+      element.innerHTML = "";
+    }
+
+    for (let index = 0; index < monthDayInfo.length; index++) {
+      const element = monthDayInfo[index];
+      if (moment(element.date).month() == thisMonth) {
+        let day = moment(element.date).date();
+        let transparentValue = 110 - element.score / 40 * 100;
+        //array[startWeekDay + day - 1].css('style', 'background-color', "background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.01) 1%, rgba(0,0,0,1) 100%)'");
+        //array[startWeekDay + day - 1].style.backgroundImage = "repeating-linear-gradient(45deg, transparent " + transparentValue + "%, rgba(255 0 0 / 50%) 100%)";
+        //array[startWeekDay + day - 1].style.background = "-moz-repeating-linear-gradient(45deg, rgb(255, 0, 0) 0%, rgb(255, 0, 0) 10%, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 50%)";
+        array[startWeekDay + day - 1].style.background = "repeating-linear-gradient(45deg, rgba(255 0 0 / 50%), rgba(255 0 0 / 50%) 12px, #f2f2f2 12px, #f2f2f2 " + transparentValue + "px)";
+
+        /*let rValue = Math.min(
+          50 + element.score / 40 * 150, 200
+          );
+        /let gValue = 255 - rValue;
+        let day = moment(element.date).date();
+        array[startWeekDay + day - 1].style.backgroundColor = "rgba(" + rValue + "," + gValue + "," + 0 + "," + 0.8 + ")";*/
+
+        /*if (element.score <= 15) {
+          let day = moment(element.date).date();
+          array[startWeekDay + day - 1].classList.setAttribute("bacground-color", "rgb(" + rValue + "," + gValue + "," + 0 + ")");
+        }
+        else if (element.score <= 25) {
+          let day = moment(element.date).date();
+          array[startWeekDay + day - 1].classList.add('stress_25');
+        }
+        else if (element.score <= 35) {
+          let day = moment(element.date).date();
+          array[startWeekDay + day - 1].classList.add('stress_35');
+        }
+        else if (element.score > 35) {
+          let day = moment(element.date).date();
+          array[startWeekDay + day - 1].classList.add('stress_40');
+        }*/
+      }
+    }
+  </script>
+
+</body>
+
+</html>
