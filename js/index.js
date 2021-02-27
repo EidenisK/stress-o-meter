@@ -4,6 +4,8 @@ let config = {
     apiKey: "AIzaSyDpzC52LL7rOGsowOGEYvqf-PyfL49EBR0"
 };
 
+let assignments = [];
+
 console.log("i'll do my lil dancy dance");
 
 var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
@@ -12,42 +14,37 @@ var logInButton = document.getElementById("logInButton");
 var logOutButton = document.getElementById("logOutButton");
 
 function handleClientLoad() {
-    console.log("handleClientLoad");
     gapi.load('client:auth2', initClient);
 }
 
 function initClient() {
-    console.log('initClient');
-
     gapi.client.init({
         apiKey: config.apiKey,
         clientId: config.clientId,
         discoveryDocs: DISCOVERY_DOCS,
         scope: SCOPES
     }).then(function() {
-        console.log('add onclick func');
         gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-        updateSigninStatus(gapi.auth1.getAuthInstance().isSignedIn().get());
+        updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
         
         logInButton.onclick = handleAuthClick;
         logOutButton.onclick = handleSignoutClick;
-        
     }, function(error) {
-        console.log('eeeee');
         appendPre(JSON.stringify(error, null, 2));
     });
-
-    console.log('a');
 }
 
 function updateSigninStatus(isSignedIn) {
+    logInButton = document.getElementById("logInButton");
+    logOutButton = document.getElementById("logOutButton");
+
     if(isSignedIn) {
         logInButton.style.display = "none";
-        signoutButton.style.display = 'block';
+        logOutButton.style.display = 'block';
         listUpcomingEvents();
     } else {
-        authorizeButton.style.display = 'block';
-        signoutButton.style.display = 'none';
+        logInButton.style.display = 'block';
+        logOutButton.style.display = 'none';
     }
 }
 
@@ -68,10 +65,11 @@ function appendPre(message) {
 function listUpcomingEvents() {
     gapi.client.calendar.events.list({
         'calendarId': 'primary',
-        'timeMin': (new Date()).toISOString(),
+        'timeMin': moment().startOf("month").toISOString(),
+        'timeMax': moment().endOf("month").toISOString(),
         'showDeleted': false,
+        'maxResults': 2500,
         'singleEvents': true,
-        'maxResults': 10,
         'orderBy': 'startTime'
     }).then(function(response) {
         var events = response.result.items;
@@ -80,12 +78,20 @@ function listUpcomingEvents() {
         if(events.length > 0) {
             for(let i = 0; i < events.length; i++) {
                 var event = events[i];
+                let summary = event.summary.toLowerCase();
                 var when = event.start.dateTime;
                 if(!when) {
                     when = event.start.date;
                 }
 
-                appendPre(event.summary + ' (' + when + ')');
+                if(summary.includes("assignment") || summary.includes("exam")) {
+                    assignments.push({
+                        "name": summary,
+                        "date": when,
+                        "impact": (summary.includes("exam") ? 2.0 : 1.0)
+                    });
+                    appendPre(summary);
+                }
             }
         } else {
             appendPre('No upcoming events found');
