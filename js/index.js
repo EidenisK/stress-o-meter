@@ -69,7 +69,7 @@ function listUpcomingEvents() {
 
     let tasks = [];
     let score = [];
-    for(let i = 1; i <= int(monthEndDate.format("DD")); i++) {
+    for(let i = 1; i <= parseInt(monthEndDate.format("DD")); i++) {
         tasks[i] = 0;
         score[i] = 0;
     }        
@@ -99,7 +99,7 @@ function listUpcomingEvents() {
             // get event date, increase amount of tasks that day
             var when = events[i].start.dateTime ?? events[i].start.date;
             if(moment(when) <= monthEndDate) {
-                tasksInDay[int(moment(when).format("DD"))]++; 
+                tasksInDay[parseInt(moment(when).format("DD"))]++; 
             } 
 
             // go through each day 7 days before assignment, calculate day's score
@@ -108,8 +108,8 @@ function listUpcomingEvents() {
             for(const delta = 0; delta < 7; delta++) {
                 stressPerDay[
                     moment(moment(when).add(-delta, "days")).toISOString()
-                ] = float(kartotinis)/float(currentDivisor);
-                currentDivisor *= float(daliklis);
+                ] = parseFloat(kartotinis)/parseFloat(currentDivisor);
+                currentDivisor *= parseFloat(daliklis);
             }
 
             // check each of the 7 days if they are in this month, if so, increase day score
@@ -122,7 +122,7 @@ function listUpcomingEvents() {
             }
         }
 
-        for(let i = 1; i <= int(monthEndDate.format("DD")); i++) {
+        for(let i = 1; i <= parseInt(monthEndDate.format("DD")); i++) {
             monthDayInfo.push({
                 'date': moment().startOf("month").add(i-1).toISOString(),
                 'numOfAssignments': tasks[i],
