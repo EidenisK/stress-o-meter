@@ -5,7 +5,7 @@
 
 ## Team: 
 
-🎓 Monika Bačkeriūtė  
+🎓 Monika Bačkieriūtė  +
 🎓 Eidenis Kasperavičius  
 🎓 Simonas Riauka  
 🎓 Gintaras Stankevičius  
