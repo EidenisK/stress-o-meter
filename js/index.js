@@ -81,8 +81,15 @@ function updateSigninStatus(isSignedIn) {
 async function getBaseNumber() {
     let userId = firebase.auth().currentUser.uid;
     db.collection('users').doc(userId).get().then(doc => {
-        console.log(doc.data());
-    })
+        if(!doc) {
+            db.collection('users').doc(userId).set({
+                baseNumber: 1
+            });
+            baseNumber = 1
+        } else {
+            baseNumber = doc.data().baseNumber;
+        }
+    });
 }
 
 function handleAuthClick(event) {
