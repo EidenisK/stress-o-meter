@@ -99,16 +99,18 @@ function listUpcomingEvents() {
             // get event date, increase amount of tasks that day
             var when = events[i].start.dateTime ?? events[i].start.date;
             if(moment(when) <= monthEndDate) {
-                tasks[parseInt(moment(when).format("DD"))]++; 
+                tasks[moment(when).format("DD")]++; 
             } 
 
             // go through each day 7 days before assignment, calculate day's score
             let stressPerDay = {};
             for(let delta = 0; delta < 8; delta++) {
                 stressPerDay[
-                    moment(moment(when).add(-delta, "days")).toISOString()
+                    moment(when).add(-delta, "days").toISOString()
                 ] = baseNumber/Math.pow(daliklis, delta) -1;
             }
+            console.log(when);
+            console.log(stressPerDay);
 
             // check each of the 7 days if they are in this month, if so, increase day score
             for(const dateBeforeExam in stressPerDay) {
