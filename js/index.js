@@ -63,7 +63,7 @@ function updateSigninStatus(isSignedIn) {
         id_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).id_token;
         access_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token;
 
-        const credential = firebase.auth().GoogleAuthProvider.credential(
+        const credential = firebase.auth.GoogleAuthProvider.credential(
             id_token,
             access_token
         );
