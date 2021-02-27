@@ -127,7 +127,7 @@ function listUpcomingEvents() {
             monthDayInfo.push({
                 'date': moment().startOf("month").add(i, "days").toISOString(),
                 'numOfAssignments': tasks[i],
-                'score': score[i]
+                'score': score[i]*10
             });
         }
     })
