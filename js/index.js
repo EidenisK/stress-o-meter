@@ -108,8 +108,8 @@ function listUpcomingEvents() {
             for(let delta = 0; delta < 7; delta++) {
                 stressPerDay[
                     moment(moment(when).add(-delta, "days")).toISOString()
-                ] = parseFloat(kartotinis)/parseFloat(currentDivisor);
-                currentDivisor *= parseFloat(daliklis);
+                ] = kartotinis/currentDivisor;
+                currentDivisor *= daliklis;
             }
 
             // check each of the 7 days if they are in this month, if so, increase day score
@@ -124,7 +124,7 @@ function listUpcomingEvents() {
 
         for(let i = 1; i <= parseInt(monthEndDate.format("DD")); i++) {
             monthDayInfo.push({
-                'date': moment().startOf("month").add(i-1).toISOString(),
+                'date': moment().startOf("month").add(i-1, "days").toISOString(),
                 'numOfAssignments': tasks[i],
                 'score': score[i]
             });
