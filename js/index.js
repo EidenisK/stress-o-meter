@@ -29,7 +29,7 @@ var logOutButton = document.getElementById("logOutButton");
 
 let id_token;
 let access_token;
-let baseNumber = 4.0;
+let baseNumber = 3.0;
 
 function handleClientLoad() {
     gapi.load('client:auth2', initClient);
