@@ -26,7 +26,7 @@ var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/
 //------------ GLOBALS -------------------------------------------
 let userId;
 var monthDayInfo = [];
-let baseNumber = 1.0;
+let baseNumber = 10.0;
 //----------------------------------------------------------------
 
 
@@ -35,7 +35,7 @@ async function getBaseNumber() {
     doc = await db.collection('users').doc(userId).get();
     if(!doc.exists) {
         console.log("Creating new base number...");
-        setBaseNumber(1);
+        setBaseNumber(10.0);
     } else {
         baseNumber = doc.data().baseNumber;
     }
