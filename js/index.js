@@ -69,7 +69,9 @@ function updateSigninStatus(isSignedIn) {
         );
         firebase.auth().signInWithCredential(credential).then(() => {
             userId = firebase.auth().currentUser.uid;
-            getBaseNumber().then(calculateStress());
+            getBaseNumber().then(function() {
+                calculateStress()
+            });
         });
         
     } else {
