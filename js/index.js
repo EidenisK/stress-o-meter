@@ -70,7 +70,7 @@ function updateSigninStatus(isSignedIn) {
         firebase.auth().signInWithCredential(credential).then(() => {
             userId = firebase.auth().currentUser.uid;
             getBaseNumber().then(function() {
-                calculateStress()
+                calculateStress();
             });
         });
         
@@ -95,14 +95,13 @@ function handleSignoutClick(event) {
 
 //----------------- USER PROPERTIES ------------------------------
 async function getBaseNumber() {
-    db.collection('users').doc(userId).get().then((doc) => {
-        if(!doc.exists) {
-            console.log("Creating new base number...");
-            setBaseNumber(1);
-        } else {
-            baseNumber = doc.data().baseNumber;
-        }
-    });
+    doc = await db.collection('users').doc(userId).get();
+    if(!doc.exists) {
+        console.log("Creating new base number...");
+        setBaseNumber(1);
+    } else {
+        baseNumber = doc.data().baseNumber;
+    }
 }
 
 async function setBaseNumber(n) {
