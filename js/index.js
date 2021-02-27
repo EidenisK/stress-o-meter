@@ -1,7 +1,7 @@
 let config = {
-    clientId: "604320586106-u25r2p64a6ul5k2rv1iqktln4rt2ku26.apps.googleusercontent.com",
-    clientSecret: "0g17cWtwITnk7BzcJeHbkX02",
-    apiKey: "AIzaSyBYnD3zV25e7lwfgOE3ZnXAzStAl8U21T4"
+    clientId: "224492503332-3o7i3da82k1u7pnm2esp3pu7jk0nln10.apps.googleusercontent.com",
+    clientSecret: "_tRhBWrP5A47r1gDIJw-krSH",
+    apiKey: "AIzaSyDpzC52LL7rOGsowOGEYvqf-PyfL49EBR0"
 };
 
 console.log("i'll do my lil dancy dance");
@@ -18,7 +18,7 @@ function handleClientLoad() {
 
 function initClient() {
     console.log('initClient');
-    
+
     gapi.client.init({
         apiKey: config.apiKey,
         clientId: config.clientId,
