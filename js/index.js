@@ -99,7 +99,7 @@ function listUpcomingEvents() {
             // get event date, increase amount of tasks that day
             var when = events[i].start.dateTime ?? events[i].start.date;
             if(moment(when) <= monthEndDate) {
-                tasksInDay[parseInt(moment(when).format("DD"))]++; 
+                tasks[parseInt(moment(when).format("DD"))]++; 
             } 
 
             // go through each day 7 days before assignment, calculate day's score
