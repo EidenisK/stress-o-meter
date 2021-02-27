@@ -39,14 +39,28 @@
     grid-template-areas: "logo menu avatar"
                          "copyright menu avatar";
   }
-  .logo {
-    display: flex;
+.logo {
+    /*display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .copyright {
+        */
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+    width: 100%;
+}
+
+.logoImage {
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+    width: 90%;
+    padding-left: 5%;
+    padding-top: 2.5%;
+}
+.copyright {
     text-align: center;
-  }
+}
   .avatar {
     grid-area: avatar;
     display: flex;
@@ -177,7 +191,7 @@
   
   .menu__item {
     text-transform: none;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 500;
     padding: 16px 16px 16px 14px;
     border-left: 4px solid transparent;
