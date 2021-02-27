@@ -85,8 +85,9 @@ async function getBaseNumber() {
             db.collection('users').doc(userId).set({
                 baseNumber: 1
             });
-            baseNumber = 1
+            baseNumber = 1;
         } else {
+            console.log(doc);
             baseNumber = doc.data().baseNumber;
         }
     });
