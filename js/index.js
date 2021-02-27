@@ -64,14 +64,14 @@ function appendPre(message) {
 
 function listUpcomingEvents() {
     let monthEndDate = moment().endOf("month");
-    let kartotinis = 1.0;
-    let daliklis = 1.219;
+    let baseNumber = 4.0;
+    let daliklis = Math.pow(baseNumber, 1/7);
 
     let tasks = [];
     let score = [];
     for(let i = 1; i <= parseInt(monthEndDate.format("DD")); i++) {
         tasks[i] = 0;
-        score[i] = 0;
+        score[i] = 1; // 1 is default
     }        
 
     gapi.client.calendar.events.list({
@@ -104,12 +104,10 @@ function listUpcomingEvents() {
 
             // go through each day 7 days before assignment, calculate day's score
             let stressPerDay = {};
-            let currentDivisor = 1.0;
-            for(let delta = 0; delta < 7; delta++) {
+            for(let delta = 0; delta < 8; delta++) {
                 stressPerDay[
                     moment(moment(when).add(-delta, "days")).toISOString()
-                ] = kartotinis/currentDivisor;
-                currentDivisor *= daliklis;
+                ] = baseNumber/Math.pow(daliklis, delta +1) -1;
             }
 
             // check each of the 7 days if they are in this month, if so, increase day score
