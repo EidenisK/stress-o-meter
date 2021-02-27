@@ -5,7 +5,7 @@
 
 ## Team: 
 
-| Member: | Discord username: | Programing skill level: |
+|          Member: | Discord username: | Programing skill level: |
 | :------------------------- |:---------------------:| :---------------------------:|
 | 🎓 Monika Bačkieriūtė     | Moni#1280 | Intermediate |
 | 🎓 Eidenis Kasperavičius  | Dusulys#2638 | Advanced |
