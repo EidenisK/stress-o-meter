@@ -67,6 +67,7 @@ function updateSigninStatus(isSignedIn) {
             id_token,
             access_token
         );
+        displayRandomTip();
         firebase.auth().signInWithCredential(credential).then(() => {
             userId = firebase.auth().currentUser.uid;
             getBaseNumber().then(function() {
