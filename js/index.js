@@ -12,7 +12,6 @@ var logInButton = document.getElementById("logInButton");
 var logOutButton = document.getElementById("logOutButton");
 
 function handleClientLoad() {
-    console.log("handleClientLoad");
     gapi.load('client:auth2', initClient);
 }
 
