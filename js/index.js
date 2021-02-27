@@ -27,7 +27,7 @@ function initClient() {
     }).then(function() {
         console.log('add onclick func');
         gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-        updateSigninStatus(gapi.auth1.getAuthInstance().isSignedIn().get());
+        updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn().get());
         
         logInButton.onclick = handleAuthClick;
         logOutButton.onclick = handleSignoutClick;
