@@ -30,6 +30,9 @@ function updateSigninStatus(isSignedIn) {
         let id_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).id_token;
         let access_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token;
 
+        let profile = gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile();
+        document.getElementById("avatar-image").setAttribute("src", profile.getImageUrl());
+
         const credential = firebase.auth.GoogleAuthProvider.credential(
             id_token,
             access_token
@@ -37,7 +40,6 @@ function updateSigninStatus(isSignedIn) {
         displayRandomTip();
         firebase.auth().signInWithCredential(credential).then(() => {
             userId = firebase.auth().currentUser.uid;
-            document.getElementById("avatar-image").setAttribute("src", profile.getImageUrl());
             getBaseNumber().then(function() {
                 calculateStress();
             });
