@@ -93,7 +93,7 @@
           <nav class="menu">
             <a class="menu__item" href="#">
               <i class="menu__icon fa fa-home"></i>
-              <span class="menu__text">overview</span>
+              <span class="menu__text" onclick="displayQuestionnaire();">Questionnaire</span>
             </a>
             <a class="menu__item" href="#">
               <i class="menu__icon fa fa-envelope"></i>
@@ -120,7 +120,10 @@
               <span class="menu__text">measurements</span>
             </a>
           </nav>
-          <div class="copyright">copyright &copy; 2021</div>
+          <div>Tip of the day:<br>
+            <div id="tipTitle"></div>
+            <div id="tipText"></div>
+          </div>
         </sidebar>
       </div>
 
@@ -415,10 +418,6 @@
 
     <button id="logInButton">Log In to Google</button>
 		<button id="logOutButton">Log Out from Google</button>
-		<pre id="scriptOutput" style="white-space: pre-wrap;"></pre>
-
-		<h1 id="tipTitle"></h1>
-		<p id="tipText"></p>
 
 		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>

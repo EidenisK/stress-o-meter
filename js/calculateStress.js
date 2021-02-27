@@ -59,9 +59,9 @@ function calculateStress() {
             });
         }
         
-        appendPre(`Date\t\tNumber of assignments\tStress level`)
+        /*appendPre(`Date\t\tNumber of assignments\tStress level`)
         for(const mdi of monthDayInfo) {
             appendPre(`${mdi.date}\t\t${mdi.numOfAssignments}\t\t${mdi.score}`);
-        }
+        }*/
     })
 }
