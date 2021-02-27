@@ -110,6 +110,7 @@ async function setBaseNumber(n) {
         baseNumber: n
     });
     baseNumber = n;
+    console.log("Created new base number");
 }
 //----------------------------------------------------------------
 
