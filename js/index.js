@@ -41,6 +41,9 @@ function initClient() {
 }
 
 function updateSigninStatus(isSignedIn) {
+    logInButton = document.getElementById("logInButton");
+    logOutButton = document.getElementById("logOutButton");
+
     if(isSignedIn) {
         logInButton.style.display = "none";
         logOutButton.style.display = 'block';
