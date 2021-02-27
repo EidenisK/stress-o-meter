@@ -1,5 +1,7 @@
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+console.log("i do my lil dancy dance");
+
+
+//------------ CONFIG -------------------------------------------
 var firebaseConfig = {
     apiKey: "AIzaSyDpzC52LL7rOGsowOGEYvqf-PyfL49EBR0",
     authDomain: "stress-o-meter-1614429921764.firebaseapp.com",
@@ -9,30 +11,26 @@ var firebaseConfig = {
     appId: "1:224492503332:web:a1114c94c713173b8f33b1",
     measurementId: "G-L1XYTE15H9"
 };
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 let db = firebase.firestore();
-let userId;
-
-let config = {
+let config = { // google calendar API
     clientId: "224492503332-3o7i3da82k1u7pnm2esp3pu7jk0nln10.apps.googleusercontent.com",
     clientSecret: "_tRhBWrP5A47r1gDIJw-krSH",
     apiKey: "AIzaSyDpzC52LL7rOGsowOGEYvqf-PyfL49EBR0"
 };
-
-var monthDayInfo = [];
-
-console.log("i'll do my lil dancy dance");
-
 var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-var logInButton = document.getElementById("logInButton");
-var logOutButton = document.getElementById("logOutButton");
+//----------------------------------------------------------------
 
-let id_token;
-let access_token;
-let baseNumber = 3.0;
 
+//------------ GLOBALS -------------------------------------------
+let userId;
+var monthDayInfo = [];
+let baseNumber = 1.0;
+//----------------------------------------------------------------
+
+
+//-------------- AUTHENTICATION -----------------------------------
 function handleClientLoad() {
     gapi.load('client:auth2', initClient);
 }
@@ -62,8 +60,8 @@ function updateSigninStatus(isSignedIn) {
         logInButton.style.display = "none";
         logOutButton.style.display = 'block';
 
-        id_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).id_token;
-        access_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token;
+        let id_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).id_token;
+        let access_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token;
 
         const credential = firebase.auth.GoogleAuthProvider.credential(
             id_token,
@@ -71,7 +69,7 @@ function updateSigninStatus(isSignedIn) {
         );
         firebase.auth().signInWithCredential(credential).then(() => {
             userId = firebase.auth().currentUser.uid;
-            getBaseNumber().then(listUpcomingEvents());
+            getBaseNumber().then(calculateStress());
         });
         
     } else {
@@ -80,6 +78,20 @@ function updateSigninStatus(isSignedIn) {
     }
 }
 
+function handleAuthClick(event) {
+    gapi.auth2.getAuthInstance().signIn();
+}
+
+function handleSignoutClick(event) {
+    gapi.auth2.getAuthInstance().signOut()
+    .then(() => {
+        return firebase.auth().signOut()
+    });
+}
+//----------------------------------------------------------------
+
+
+//----------------- USER PROPERTIES ------------------------------
 async function getBaseNumber() {
     db.collection('users').doc(userId).get().then((doc) => {
         if(!doc.exists) {
@@ -96,25 +108,11 @@ async function setBaseNumber(n) {
     });
     baseNumber = n;
 }
+//----------------------------------------------------------------
 
-function handleAuthClick(event) {
-    gapi.auth2.getAuthInstance().signIn();
-}
 
-function handleSignoutClick(event) {
-    gapi.auth2.getAuthInstance().signOut()
-    .then(() => {
-        return firebase.auth().signOut()
-    });
-}
-
-function appendPre(message) {
-    var pre = document.getElementById("scriptOutput");
-    var textContent = document.createTextNode(message + '\n');
-    pre.appendChild(textContent);
-}
-
-function listUpcomingEvents() {
+//-------------------- CALCULATION ---------------------------------
+function calculateStress() {
     let monthEndDate = moment().endOf("month");
     let daliklis = Math.pow(baseNumber, 1/7);
 
@@ -180,4 +178,11 @@ function listUpcomingEvents() {
             appendPre(`${mdi.date}\t\t${mdi.numOfAssignments}\t\t${mdi.score}`);
         }
     })
+}
+//----------------------------------------------------------------
+
+function appendPre(message) {
+    var pre = document.getElementById("scriptOutput");
+    var textContent = document.createTextNode(message + '\n');
+    pre.appendChild(textContent);
 }
