@@ -62,6 +62,6 @@ function displayRandomTip() {
         }
     ];
     let tip = texts[Math.floor(Math.random()*texts.length)];
-    document.getElementById(`tipTitle`).innerHTML = tip.title;
+    document.getElementById(`tipTitle`).innerHTML = '<br>' + tip.title + '<br>';
     document.getElementById(`tipText`).innerHTML = tip.text;
 }

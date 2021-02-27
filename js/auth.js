@@ -37,6 +37,7 @@ function updateSigninStatus(isSignedIn) {
         displayRandomTip();
         firebase.auth().signInWithCredential(credential).then(() => {
             userId = firebase.auth().currentUser.uid;
+            document.getElementById("avatar-image").setAttribute("src", profile.getImageUrl());
             getBaseNumber().then(function() {
                 calculateStress();
             });
