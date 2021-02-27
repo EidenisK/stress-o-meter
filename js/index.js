@@ -29,6 +29,7 @@ var monthDayInfo = [];
 let baseNumber = 1.0;
 //----------------------------------------------------------------
 
+
 //----------------- USER PROPERTIES ------------------------------
 async function getBaseNumber() {
     doc = await db.collection('users').doc(userId).get();

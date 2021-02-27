@@ -11,7 +11,9 @@ function QuestionaireDone() {
     a10 = parseInt(document.querySelector('input[name="q10"]:checked').value);
 
     ats = a1 + a2 + a3 + a6 + a9 + a10 - a4 - a5 - a7 - a8 + 14;
-    alert(ats);
+    
+    setBaseNumber(ats/10);
+
     document.getElementById("qstBody").style.visibility = "hidden"; 
 }
 
