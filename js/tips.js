@@ -62,7 +62,7 @@ function displayRandomTip() {
         }
     ];
     let tip = texts[Math.floor(Math.random()*texts.length)];
-
+    console.log(tip);
     document.getElementById(`tipTitle`).innerHtml = tip.title;
     document.getElementById(`tipText`).innerHtml = tip.text;
 }
