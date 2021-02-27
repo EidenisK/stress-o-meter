@@ -26,7 +26,7 @@ var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/
 //------------ GLOBALS -------------------------------------------
 let userId;
 var monthDayInfo = [];
-let baseNumber = 1.0;
+let baseNumber = 10.0;
 //----------------------------------------------------------------
 
 
@@ -35,15 +35,21 @@ async function getBaseNumber() {
     doc = await db.collection('users').doc(userId).get();
     if(!doc.exists) {
         console.log("Creating new base number...");
-        setBaseNumber(1);
+        setBaseNumber(10.0);
+        
+        alert("To make the results more accurate, please fill out the questionnaire!\n(click the button in the sidebar)");
     } else {
         baseNumber = doc.data().baseNumber;
+        if(!doc.data().filledOut) {
+            alert("To make the results more accurate, please fill out the questionnaire!\n(click the button in the sidebar)");
+        }
     }
 }
 
-async function setBaseNumber(n) {
+async function setBaseNumber(n, date) {
     await db.collection('users').doc(userId).set({
-        baseNumber: n
+        baseNumber: n,
+        date: date
     });
     baseNumber = n;
     console.log("Created new base number");
