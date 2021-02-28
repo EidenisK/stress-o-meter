@@ -32,6 +32,9 @@ async function calculateStress() {
 
     var events = response.result.items;
 
+    console.log("middle of stress");
+    console.log(today);
+
     for(let i = 0; i < events.length; i++) {
         // check if event is an assignment
         let summary = events[i].summary.toLowerCase();
