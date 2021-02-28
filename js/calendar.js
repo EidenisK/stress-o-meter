@@ -7,7 +7,7 @@ function loadColors() {
     let monthDays = today.daysInMonth();
     let weekDay = today.day();
     let thisDay = today.date();
-    let startWeekDay = today.subtract(thisDay, 'days').day();
+    let startWeekDay = today.startOf("month").day();
     let thisMonth = today.month();
 
     for (let index = 0; index < startWeekDay; index++) {
@@ -40,10 +40,12 @@ function loadColors() {
     }
 }
 document.querySelector('.next').addEventListener('click', () => {
-  today.setMonth(today.getMonth() + 1);
+  console.log("next");
+  today.add(1, "month");
   calculateStress();
 });
 document.querySelector('.previous').addEventListener('click', () => {
-  today.setMonth(today.getMonth() - 1);
+  console.log("prev");
+  today.add(-1, "month");
   calculateStress();
 });
