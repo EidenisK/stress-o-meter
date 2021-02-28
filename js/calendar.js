@@ -3,10 +3,11 @@ console.log(today);
 function loadColors() {
   document.querySelector(".current-month").innerHTML = today.format('MMMM YYYY');
 
+  console.log("at load colors");
+  console.log(today);
+
     let array = document.getElementsByClassName("calendar__day");
     let monthDays = today.daysInMonth();
-    let weekDay = today.day();
-    let thisDay = today.date();
     let startWeekDay = today.startOf("month").day();
     let thisMonth = today.month();
 
@@ -38,6 +39,8 @@ function loadColors() {
         array[startWeekDay + day - 1].style.background = "repeating-linear-gradient(45deg, rgba(255 0 0 / 50%), rgba(255 0 0 / 50%) 12px, #f2f2f2 12px, #f2f2f2 " + transparentValue + "px)";
       }
     }
+    console.log("After load colors");
+    console.log(today);
 }
 document.querySelector('.next').addEventListener('click', () => {
   console.log("next");
