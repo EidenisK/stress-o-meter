@@ -74,6 +74,8 @@ async function calculateStress() {
         console.log(today.startOf("month").add(i -1, "days").format("YYYY-MM-DD"));
     }
     console.log(monthDayInfo);
+    console.log("After calculate stress");
+    console.log(today);
 
     loadColors();
 }

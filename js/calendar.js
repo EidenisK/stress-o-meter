@@ -1,4 +1,3 @@
-console.log(today);
 function loadColors() {
   document.querySelector(".current-month").innerHTML = today.format('MMMM YYYY');
 
