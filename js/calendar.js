@@ -66,6 +66,7 @@ function loadColors() {
         let val = element.score/40 * 1;
 
         array[startWeekDay + day - 1].style.background = `rgba(255, 0, 0, ${val});`;
+        console.log( `rgba(255, 0, 0, ${val});`);
 
         /*array[startWeekDay + day - 1].style.backgroundColor = `#rgba(255, 0, 0, ${val});`;
         array[startWeekDay + day - 1].style.backgroundImage = `linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 0.8) 50%), linear-gradient(to bottom, transparent 50%, rgba(255, 255, 255, 0.8) 50%);`
