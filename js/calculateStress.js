@@ -1,4 +1,6 @@
 async function calculateStress() {
+    monthDayInfo = [];
+
     let selectedDate = moment(today);
     let monthEndDate = moment(today).endOf("month");
     let daliklis = Math.pow(baseNumber, 1/7);
