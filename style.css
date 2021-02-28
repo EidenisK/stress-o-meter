@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 /* WRAPPER */
 
 .wrapper {
@@ -180,7 +184,7 @@
     font-family: Montserrat;
     font-weight: 100;
     color: black;
-    height: 90vh;
+    height: 100%;
     margin: 0;
   }
   
@@ -250,6 +254,7 @@
   .calendar {
     background-color: white;
     border: 5px solid #e1e1e1;
+    height: 95%;
   }
   
   .calendar__header > div {
