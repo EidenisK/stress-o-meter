@@ -25,4 +25,4 @@
 
 # USER INSTRUCTIONS
 
-Since Google APIs do not allow the project to be run locally
+Since Google APIs do not allow the project to be run locally, the only way to use it currently
