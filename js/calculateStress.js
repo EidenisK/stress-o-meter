@@ -1,7 +1,7 @@
 async function calculateStress() {
-    let selectedDate = moment(today);
+    let selectedDate = today;
     console.log("at calculateStress " + selectedDate.toISOString());
-    let monthEndDate = selectedDate.endOf("month");
+    let monthEndDate = today.endOf("month");
     let daliklis = Math.pow(baseNumber, 1/7);
 
     let tasks = [];
@@ -13,7 +13,7 @@ async function calculateStress() {
 
     let response = await gapi.client.calendar.events.list({
         'calendarId': 'primary',
-        'timeMin': selectedDate.startOf("month").toISOString(),
+        'timeMin': today.startOf("month").toISOString(),
         'timeMax': monthEndDate.add(1, "month").toISOString(),
         'showDeleted': false,
         'maxResults': 2500,
@@ -21,7 +21,7 @@ async function calculateStress() {
         'orderBy': 'startTime'
     });
 
-    console.log(selectedDate.startOf("month").toISOString());
+    console.log(today.startOf("month").toISOString());
     console.log(monthEndDate.add(1, "month").toISOString());
 
     if(!response) {
@@ -66,11 +66,11 @@ async function calculateStress() {
 
     for(let i = 1; i <= parseInt(monthEndDate.format("D")); i++) {
         monthDayInfo.push({
-            'date': selectedDate.startOf("month").add(i -1, "days").format("YYYY-MM-DD"),
+            'date': today.startOf("month").add(i -1, "days").format("YYYY-MM-DD"),
             'numOfAssignments': tasks[i],
             'score': score[i].toFixed(2)
         });
-        console.log(selectedDate.startOf("month").add(i -1, "days").format("YYYY-MM-DD"));
+        console.log(today.startOf("month").add(i -1, "days").format("YYYY-MM-DD"));
     }
     console.log(monthDayInfo);
 
