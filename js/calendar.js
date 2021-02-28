@@ -41,11 +41,11 @@ function loadColors() {
 }
 document.querySelector('.next').addEventListener('click', () => {
   console.log("next");
-  today.add(1, "month");
+  today = today.add(1, "month");
   calculateStress();
 });
 document.querySelector('.previous').addEventListener('click', () => {
   console.log("prev");
-  today.subtract(1, "month");
+  today = today.subtract(1, "month");
   calculateStress();
 });
