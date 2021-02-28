@@ -50,16 +50,18 @@ function loadColors() {
       if (moment(element.date).month() == thisMonth && moment(element.date).year() == today.year()) {
         let day = moment(element.date).date();
        
-        let div = document.createElement('div');
-        div.innerHTML = element.numOfAssignments;
-        div.style.display = 'flex';
-        div.style.justifyContent = 'flex-end';
-        div.style.alignContent = 'center';
-        div.style.flexDirection = 'column';
-        div.style.height = '100%';
-        div.style.paddingBottom = '16px';
-        div.style.boxSizing = 'border-box';
-        array[startWeekDay + day - 1].appendChild(div);
+        if(element.numOfAssignments != 0) {
+          let div = document.createElement('div');
+          div.innerHTML = element.numOfAssignments + " assignments";
+          div.style.display = 'flex';
+          div.style.justifyContent = 'flex-end';
+          div.style.alignContent = 'center';
+          div.style.flexDirection = 'column';
+          div.style.height = '100%';
+          div.style.paddingBottom = '16px';
+          div.style.boxSizing = 'border-box';
+          array[startWeekDay + day - 1].appendChild(div);
+        }
 
         let val = element.score/40 * 1;
 
