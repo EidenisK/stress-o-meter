@@ -102,23 +102,27 @@
                   <i class="menu__icon fa fa-calendar"></i>
                   <span class="menu__text">CALENDAR</span>
               </a>
-              <a class="menu__item menu__item" onclick="" href="img/ChatPlaceholder.png">
+              <a class="menu__item menu__item"href="img/ChatPlaceholder.png">
                   <i class="menu__icon fa fa-comments"></i>
                   <span class="menu__text">CHAT</span>
+              </a>
+              <a class="menu__item menu__item" href="#">
+                  <i class="menu__icon fa fa-map"></i>
+                  <span class="menu__text">STRESS MAP</span>
               </a>
               <a class="menu__item menu__item" onclick="displayQuestionnaire();" href="#">
                   <i class="menu__icon fa fa-question-circle"></i>
                   <span class="menu__text">QUESTIONNAIRE</span>
               </a>
               <a class="menu__item" href="#">
-                <i class="menu__icon fa fa-quote-right"></i>
+                  <i class="menu__icon fa fa-quote-right"></i>
                   <span class="menu__text">TIP OF THE DAY</span>
                   <div class="menu__text" id="tipTitle"></div>
                   <div class="menu__text" id="tipText"></div>
               </a>
               <a class="menu__item" href="#">
-                <i class="menu__icon fa fa-sign-out"></i>
-                <span class="menu__text" id="logOutButton">LOG OUT</span>
+                  <i class="menu__icon fa fa-sign-out"></i>
+                  <span class="menu__text" id="logOutButton">LOG OUT</span>
               </a>
           </nav>
         </sidebar>
@@ -137,7 +141,13 @@
         </div>
     </div>
       <div id="qstBody" class="qstBody" style="visibility: hidden">
-          <h1 class="qstText">Questions</h1>
+          <div style="">
+              <h1 class="qstText" style="">Questions</h1>
+              <a style="width: 5%;" class="menu__item qstText" onclick="QuestionaireDone();" href="#">
+                  <i class="menu__icon fa fa-times-circle"></i>
+              </a>
+          </div>
+
           <p class="qstText">In the last month, how ofted have you been upset because of something that happened unexpectedly?</p>
           <div class="qstCenter">
               <label class="container">
