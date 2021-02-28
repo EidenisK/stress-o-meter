@@ -64,7 +64,7 @@ function loadColors() {
         }
 
         let val = element.score/40 * 1;
-        array[startWeekDay + day - 1].style.background = 'rgba(255, 0, 0, 0.5)';
+        array[startWeekDay + day - 1].style.background = 'rgba(255, 0, 0, ' + val + ')';
 
 
         /*array[startWeekDay + day - 1].style.backgroundColor = `#rgba(255, 0, 0, ${val});`;
