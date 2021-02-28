@@ -492,3 +492,10 @@ a:hover {
   color: black;
   border-radius: 50%;
 }
+
+.qstComplete {
+    width: 15%;
+    margin-left: 40%;
+    padding: 10px;
+    margin-top: 15px;
+}
