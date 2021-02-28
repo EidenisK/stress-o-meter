@@ -1,4 +1,5 @@
 const today = moment();
+console.log(today);
 function loadColors() {
   document.querySelector(".current-month").innerHTML = today.format('MMMM YYYY');
 
@@ -46,5 +47,7 @@ document.querySelector('.next').addEventListener('click', () => {
 });
 document.querySelector('.previous').addEventListener('click', () => {
   today.setMonth(today.getMonth() - 1);
-  loadColors();
+  calculateStress().then(() => {
+    loadColors();
+  });
 });
