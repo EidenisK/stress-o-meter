@@ -46,6 +46,6 @@ document.querySelector('.next').addEventListener('click', () => {
 });
 document.querySelector('.previous').addEventListener('click', () => {
   console.log("prev");
-  today.add(-1, "month");
+  today.subtract(1, "month");
   calculateStress();
 });
