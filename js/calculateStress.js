@@ -1,11 +1,12 @@
 async function calculateStress() {
     let selectedDate = moment(today);
+    console.log("at calculateStress " + selectedDate);
     let monthEndDate = selectedDate.endOf("month");
     let daliklis = Math.pow(baseNumber, 1/7);
 
     let tasks = [];
     let score = [];
-    for(let i = 1; i <= parseInt(monthEndDate.format("DD")); i++) {
+    for(let i = 1; i <= parseInt(monthEndDate.format("D")); i++) {
         tasks[i] = 0;
         score[i] = 1; // 1 is default
     }        
