@@ -400,6 +400,8 @@
     border-image-slice: 100%;
     border-image-source: none;
     border-image-width: 1;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 input,
