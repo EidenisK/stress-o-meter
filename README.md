@@ -29,6 +29,8 @@
 * Before using the web app, you must login with Google. In Google Firebase database we only collect the result of the last filled questionnaire and the date when it was filled out. Additionally, the successfull execution of our algorithms depend on events with "assignment" or "exam" in their name being found on user's main Google calendar.
 * After logging in, the user can see the calendar for the current month. Above it, there are arrows for changing the shown month.
 * To get more accurate results, the user is encouraged to fill out the questionnaire (accessible on the sidebar) - answer 10 questions about their stress levels. After clicking "Complete", the calculated score is saved in the database and accessed from there at next page load.
+* On the sidebar there are also helpful tips for maintaining one's mental health, selected randomly.
+* Lastly, there are "Stress map" and "Chat" buttons that illustrate some of our possible features.
 
 # FUTURE ROADMAP
 
