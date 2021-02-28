@@ -58,7 +58,7 @@ function displayRandomTip() {
         },
         {
             title: `Ask a Pro`,
-            text: `If you feel a lot less happy than you used to, even after you try the tips in this slideshow, it's time to call an expert. Book a session with a counselor to talk about how you feel. If depression is the reason you're down, there are treatments. Even if you're not depressed, you might learn some helpful things about yourself and your challenges -- and end up feeling better than you thought you could.`
+            text: `If you feel a lot less happy than you used to, even after you try a lot of tips , it's time to call an expert. Book a session with a counselor to talk about how you feel. If depression is the reason you're down, there are treatments. Even if you're not depressed, you might learn some helpful things about yourself and your challenges -- and end up feeling better than you thought you could.`
         }
     ];
     let tip = texts[Math.floor(Math.random()*texts.length)];
