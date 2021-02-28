@@ -12,7 +12,9 @@ function QuestionaireDone() {
 
     ats = a1 + a2 + a3 + a6 + a9 + a10 - a4 - a5 - a7 - a8 + 14;
     
-    setBaseNumber(ats, (new Date()).toISOString());
+    setBaseNumber(ats, (new Date()).toISOString()).then(() => {
+        calculateStress();
+    });
 
     document.getElementById("qstBody").style.visibility = "hidden"; 
 }
