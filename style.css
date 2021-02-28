@@ -87,6 +87,7 @@
   }
   .logo {
     grid-area: logo;
+    display: none;
   }
   .menu__text {
     display: none;
@@ -118,6 +119,10 @@
     }
     .avatar__img > img {
       border-radius: 50%;
+    }
+
+    .logo {
+      display: block;
     }
   }
   
