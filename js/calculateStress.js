@@ -1,6 +1,7 @@
 async function calculateStress() {
     let selectedDate = today;
-    console.log("at calculateStress " + selectedDate.toISOString());
+    console.log("at calculateStress");
+    console.log(today);
     let monthEndDate = today.endOf("month");
     let daliklis = Math.pow(baseNumber, 1/7);
 
