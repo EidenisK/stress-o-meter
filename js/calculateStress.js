@@ -1,7 +1,5 @@
 async function calculateStress() {
     let selectedDate = moment(today);
-    console.log("at calculateStress");
-    console.log(today);
     let monthEndDate = moment(today).endOf("month");
     let daliklis = Math.pow(baseNumber, 1/7);
 
@@ -29,9 +27,6 @@ async function calculateStress() {
 
     var events = response.result.items;
 
-    console.log("middle of stress");
-    console.log(today);
-
     for(let i = 0; i < events.length; i++) {
         // check if event is an assignment
         let summary = events[i].summary.toLowerCase();
@@ -53,8 +48,6 @@ async function calculateStress() {
             ] = baseNumber/Math.pow(daliklis, delta) -1;
         }
 
-        console.log(stressPerDay);
-
         // check each of the 7 days if they are in this month, if so, increase day score
         for(const dateBeforeExam in stressPerDay) {
             if(moment(dateBeforeExam) < monthEndDate) {
@@ -73,9 +66,6 @@ async function calculateStress() {
         });
         console.log(today.startOf("month").add(i -1, "days").format("YYYY-MM-DD"));
     }
-    console.log(monthDayInfo);
-    console.log("After calculate stress");
-    console.log(today);
 
     loadColors();
 }
