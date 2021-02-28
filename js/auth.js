@@ -15,7 +15,7 @@ function initClient() {
         logInButton.onclick = handleAuthClick;
         logOutButton.onclick = handleSignoutClick;
     }, function(error) {
-        appendPre(JSON.stringify(error, null, 2));
+        console.log(JSON.stringify(error, null, 2));
     });
 }
 
