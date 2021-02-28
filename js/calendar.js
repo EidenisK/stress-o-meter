@@ -52,7 +52,7 @@ function loadColors() {
        
         if(element.numOfAssignments != 0) {
           let div = document.createElement('div');
-          div.innerHTML = element.numOfAssignments + " assignments";
+          div.innerHTML = element.numOfAssignments + " assignment(s)";
           div.style.display = 'flex';
           div.style.justifyContent = 'flex-end';
           div.style.alignContent = 'center';
