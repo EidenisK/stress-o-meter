@@ -1,4 +1,4 @@
-let today = moment();
+let today = moment().startOf("month");
 console.log(today);
 function loadColors() {
   document.querySelector(".current-month").innerHTML = today.format('MMMM YYYY');
