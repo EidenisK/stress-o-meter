@@ -29,9 +29,11 @@ function loadColors() {
       const element = monthDayInfo[index];
       if (moment(element.date).month() == thisMonth && moment(element.date).year() == today.year()) {
         let day = moment(element.date).date();
-        let transparentValue = 110 - element.score / 40 * 100;
        
-        array[startWeekDay + day - 1].style.background = "repeating-linear-gradient(45deg, rgba(255 0 0 / 50%), rgba(255 0 0 / 50%) 12px, #f2f2f2 12px, #f2f2f2 " + transparentValue + "px)";
+        let widthValue = 5;
+        let gapValue = 1000 - element.score/40 * 990;
+
+        array[startWeekDay + day - 1].style.background = `repeating-linear-gradient(45deg, rgba(255 0 0 / 50%), rgba(255 0 0 / 50%) ${widthValue}px, #f2f2f2 ${widthValue}px, #f2f2f2 " + ${gapValue} + "px)`;
       }
     }
 }
