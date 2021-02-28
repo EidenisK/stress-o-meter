@@ -15,6 +15,10 @@ function loadColors() {
       element.classList.remove('bottom_line');
     }
 
+    for(const el in document.getElementsByClassName("calendar__day")) {
+      el.innerHTML = "";
+    }
+
     for (let index = 0; index < startWeekDay; index++) {
       const element = array[index];
       element.style.background = null;
