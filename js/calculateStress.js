@@ -69,7 +69,9 @@ async function calculateStress() {
             'numOfAssignments': tasks[i],
             'score': score[i].toFixed(2)
         });
+        console.log(selectedDate.startOf("month").add(i -1, "days").format("YYYY-MM-DD"));
     }
+    console.log(monthDayInfo);
 
     loadColors();
 }
