@@ -30,10 +30,13 @@ function loadColors() {
       if (moment(element.date).month() == thisMonth && moment(element.date).year() == today.year()) {
         let day = moment(element.date).date();
        
-        let widthValue = 5;
-        let gapValue = 60 - element.score/40 * 50;
+        let val = element.score/40 * 1;
 
-        array[startWeekDay + day - 1].style.background = `repeating-linear-gradient(45deg, rgba(255 0 0 / 50%), rgba(255 0 0 / 50%) ${widthValue}px, #f2f2f2 ${widthValue}px, #f2f2f2 ${gapValue}px)`;
+        array[startWeekDay + day - 1].style.backgroundColor = `#rgba(255, 0, 0, ${val})`;
+        array[startWeekDay + day - 1].style.backgroundImage = `linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 0.8) 50%), linear-gradient(to bottom, transparent 50%, rgba(255, 255, 255, 0.8) 50%);`
+        array[startWeekDay + day - 1].style.backgroundSize = `5px 5px`;
+
+        //array[startWeekDay + day - 1].style.background = `repeating-linear-gradient(45deg, rgba(255 0 0 / 50%), rgba(255 0 0 / 50%) ${widthValue}px, #f2f2f2 ${widthValue}px, #f2f2f2 ${gapValue}px)`;
       }
     }
 }
