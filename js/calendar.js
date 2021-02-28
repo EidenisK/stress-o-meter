@@ -1,13 +1,13 @@
-const today = new Date();
+const today = moment();
 function loadColors() {
-  document.querySelector(".current-month").innerHTML = moment(today).format('MMMM YYYY');
+  document.querySelector(".current-month").innerHTML = today.format('MMMM YYYY');
 
     let array = document.getElementsByClassName("calendar__day");
-    let monthDays = moment(today).daysInMonth();
-    let weekDay = moment(today).day();
-    let thisDay = moment(today).date();
-    let startWeekDay = moment(today).subtract(thisDay, 'days').day();
-    let thisMonth = moment(today).month();
+    let monthDays = today.daysInMonth();
+    let weekDay = today.day();
+    let thisDay = today.date();
+    let startWeekDay = today.subtract(thisDay, 'days').day();
+    let thisMonth = today.month();
 
     for (let index = 0; index < startWeekDay; index++) {
       const element = array[index];
@@ -30,7 +30,7 @@ function loadColors() {
 
     for (let index = 0; index < monthDayInfo.length; index++) {
       const element = monthDayInfo[index];
-      if (moment(element.date).month() == thisMonth && moment(element.date).year() == moment(today).year()) {
+      if (moment(element.date).month() == thisMonth && moment(element.date).year() == today.year()) {
         let day = moment(element.date).date();
         let transparentValue = 110 - element.score / 40 * 100;
        
