@@ -65,5 +65,3 @@ function appendPre(message) {
     var textContent = document.createTextNode(message + '\n');
     pre.appendChild(textContent);
 }
-
-loadMonthDays(); // show day numbers on page load
