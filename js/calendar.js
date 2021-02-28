@@ -33,7 +33,7 @@ function loadColors() {
         let widthValue = 5;
         let gapValue = 1000 - element.score/40 * 990;
 
-        array[startWeekDay + day - 1].style.background = `repeating-linear-gradient(45deg, rgba(255 0 0 / 50%), rgba(255 0 0 / 50%) ${widthValue}px, #f2f2f2 ${widthValue}px, #f2f2f2 " + ${gapValue} + "px)`;
+        array[startWeekDay + day - 1].style.background = `repeating-linear-gradient(45deg, rgba(255 0 0 / 50%), rgba(255 0 0 / 50%) ${widthValue}px, #f2f2f2 ${widthValue}px, #f2f2f2 ${gapValue}px)`;
       }
     }
 }
