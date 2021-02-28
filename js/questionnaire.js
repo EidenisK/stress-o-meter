@@ -26,3 +26,10 @@ function ExitQuestionaire(){
 function displayQuestionnaire() {
     document.getElementById("qstBody").style.visibility = "visible";
 }
+
+function displayStressMap(){
+	document.getElementById("mapBody").style.visibility = "visible";
+}
+function exitMap(){
+	document.getElementById("mapBody").style.visibility = "hidden";
+}
