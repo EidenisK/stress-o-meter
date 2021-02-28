@@ -40,7 +40,9 @@ function loadColors() {
 }
 document.querySelector('.next').addEventListener('click', () => {
   today.setMonth(today.getMonth() + 1);
-  loadColors();
+  calculateStress().then(() => {
+    loadColors();
+  });
 });
 document.querySelector('.previous').addEventListener('click', () => {
   today.setMonth(today.getMonth() - 1);
