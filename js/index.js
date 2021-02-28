@@ -27,6 +27,7 @@ var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/
 let userId;
 var monthDayInfo = [];
 let baseNumber = 10.0;
+let today = moment().startOf("month");
 //----------------------------------------------------------------
 
 
