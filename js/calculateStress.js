@@ -20,6 +20,9 @@ async function calculateStress() {
         'orderBy': 'startTime'
     });
 
+    console.log(selectedDate.startOf("month").toISOString());
+    console.log(monthEndDate.add(1, "month").toISOString());
+
     if(!response) {
         alert("Something went horribly wrong, let the developers know!");
         return;
@@ -47,6 +50,8 @@ async function calculateStress() {
                 moment(when).add(-delta, "days").toISOString()
             ] = baseNumber/Math.pow(daliklis, delta) -1;
         }
+
+        console.log(stressPerDay);
 
         // check each of the 7 days if they are in this month, if so, increase day score
         for(const dateBeforeExam in stressPerDay) {
