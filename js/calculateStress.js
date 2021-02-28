@@ -1,8 +1,8 @@
 async function calculateStress() {
-    let selectedDate = today;
+    let selectedDate = moment(today);
     console.log("at calculateStress");
     console.log(today);
-    let monthEndDate = today.endOf("month");
+    let monthEndDate = moment(today).endOf("month");
     let daliklis = Math.pow(baseNumber, 1/7);
 
     let tasks = [];
@@ -14,8 +14,8 @@ async function calculateStress() {
 
     let response = await gapi.client.calendar.events.list({
         'calendarId': 'primary',
-        'timeMin': today.startOf("month").toISOString(),
-        'timeMax': monthEndDate.add(1, "month").toISOString(),
+        'timeMin': moment(today).startOf("month").toISOString(),
+        'timeMax': moment(monthEndDate).add(1, "month").toISOString(),
         'showDeleted': false,
         'maxResults': 2500,
         'singleEvents': true,
