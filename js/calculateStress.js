@@ -1,8 +1,6 @@
 async function calculateStress() {
-    let selectedDate = today;
-    console.log("at calculateStress");
-    console.log(today);
-    let monthEndDate = today.endOf("month");
+    let selectedDate = moment(today);
+    let monthEndDate = moment(today).endOf("month");
     let daliklis = Math.pow(baseNumber, 1/7);
 
     let tasks = [];
@@ -14,16 +12,13 @@ async function calculateStress() {
 
     let response = await gapi.client.calendar.events.list({
         'calendarId': 'primary',
-        'timeMin': today.startOf("month").toISOString(),
-        'timeMax': monthEndDate.add(1, "month").toISOString(),
+        'timeMin': moment(today).startOf("month").toISOString(),
+        'timeMax': moment(monthEndDate).add(1, "month").toISOString(),
         'showDeleted': false,
         'maxResults': 2500,
         'singleEvents': true,
         'orderBy': 'startTime'
     });
-
-    console.log(today.startOf("month").toISOString());
-    console.log(monthEndDate.add(1, "month").toISOString());
 
     if(!response) {
         alert("Something went horribly wrong, let the developers know!");
@@ -53,8 +48,6 @@ async function calculateStress() {
             ] = baseNumber/Math.pow(daliklis, delta) -1;
         }
 
-        console.log(stressPerDay);
-
         // check each of the 7 days if they are in this month, if so, increase day score
         for(const dateBeforeExam in stressPerDay) {
             if(moment(dateBeforeExam) < monthEndDate) {
@@ -73,7 +66,6 @@ async function calculateStress() {
         });
         console.log(today.startOf("month").add(i -1, "days").format("YYYY-MM-DD"));
     }
-    console.log(monthDayInfo);
 
     loadColors();
 }
