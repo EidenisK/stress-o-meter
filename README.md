@@ -16,7 +16,7 @@
 
 Nuotraukytes  
 
-"Stress-O-Meter" is a students best friend or his worst nightmare. By filling a short quiz and giving your timetable to "Stress-O-Meter", the predictions of your emotional level are visualized on a calendar. At various days of the month the stress level might differ. If the day is a weekend or just does not have any assignments to do, then a vivid green will catch your eye. If there is a long, hard working day or an exam, then probably that week is blazing red. But that is not the end of "Stress-O-Meter's" capabilities:  
+"Stress-O-Meter" is a students best friend or his worst nightmare. By filling a short quiz and giving your timetable to "Stress-O-Meter", the predictions of your emotional level are visualized on a calendar. At various days of the month the stress level might differ. If the day is a weekend or just does not have any assignments to do, then only one or two red lines will catch your eye. If there is a long, hard working day or an exam, then probably that day is blazing red. But that is not the end of "Stress-O-Meter's" capabilities:  
 * Obiously, "Stress-O-Meter" provides a calendar that is painted accordingly to your busyness and emotional health: the more red stripes there are, more stress will be felt that day  
 * "Stress-O-Meter" gives advices how to cope with stress and even reduce it  
 * "Stress-O-Meter" has a chating function, so that the stressed ones can seek moral support and those, who are slacking off, provided that  
