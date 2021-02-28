@@ -43,7 +43,7 @@ function loadColors() {
     }
     rows[rowCount - 1].classList.add('bottom_line');
 
-    for (let index = 0; index < startWeekDay; index++) {
+    for (let index = 0; index < array.length; index++) {
       const element = array[index];
       element.style.background = null;
       element.innerHTML = "";
