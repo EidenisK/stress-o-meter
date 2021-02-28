@@ -41,13 +41,9 @@ function loadColors() {
 }
 document.querySelector('.next').addEventListener('click', () => {
   today.setMonth(today.getMonth() + 1);
-  calculateStress().then(() => {
-    loadColors();
-  });
+  calculateStress();
 });
 document.querySelector('.previous').addEventListener('click', () => {
   today.setMonth(today.getMonth() - 1);
-  calculateStress().then(() => {
-    loadColors();
-  });
+  calculateStress();
 });
