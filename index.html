@@ -141,12 +141,16 @@
         </div>
     </div>
       <div id="qstBody" class="qstBody" style="visibility: hidden">
-          <div style="">
-              <h1 class="qstText" style="">Questions</h1>
-              <a style="width: 5%;" class="menu__item qstText" onclick="QuestionaireDone();" href="#">
-                  <i class="menu__icon fa fa-times-circle"></i>
-              </a>
-          </div>
+          <table style ="width:100%">
+              <tr>
+                  <th style ="width: 90%"><h1 class="qstText" style="margin-left: 10%">Questions</h1></th>
+                  <th style ="width: 1%">
+                      <a style="padding-right: 50%;" class=" qstText menu__item" onclick="ExitQuestionaire();" href="#">
+                          <i class="menu__icon fa fa-times-circle"></i>
+                      </a>
+                  </th>
+              </tr>
+          </table>
 
           <p class="qstText">In the last month, how ofted have you been upset because of something that happened unexpectedly?</p>
           <div class="qstCenter">

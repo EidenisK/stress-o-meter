@@ -19,6 +19,10 @@ function QuestionaireDone() {
     document.getElementById("qstBody").style.visibility = "hidden"; 
 }
 
+function ExitQuestionaire(){
+	document.getElementById("qstBody").style.visibility = "hidden";
+}
+
 function displayQuestionnaire() {
     document.getElementById("qstBody").style.visibility = "visible";
 }
