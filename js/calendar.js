@@ -6,6 +6,39 @@ function loadColors() {
     let startWeekDay = today.startOf("month").day() -1;
     let thisMonth = today.month();
 
+    let rows = document.getElementsByClassName("calendar__week");
+    let rowCount = 0;
+
+    for (let index = 0; index < rows.length; index++) {
+      const element = rows[index];
+      element.classList.remove('active_row');
+      element.classList.remove('bottom_line');
+    }
+
+    for (let index = 0; index < startWeekDay; index++) {
+      const element = array[index];
+      element.style.background = null;
+      element.innerHTML = "";
+      rows[rowCount].classList.add('active_row');
+      if (index % 7 == 0) {
+        rows[rowCount].classList.add('active_row');
+        rowCount++;
+      }
+    }
+
+    let dayOfMonth = 1;
+    for (let index = startWeekDay; index < startWeekDay + monthDays; index++) {
+      const element = array[index];
+      element.style.background = null;
+      element.innerHTML = dayOfMonth;
+      dayOfMonth++;
+      if (index % 7 == 0) {
+        rows[rowCount].classList.add('active_row');
+        rowCount++;
+      }
+    }
+    rows[rowCount - 1].classList.add('bottom_line');
+
     for (let index = 0; index < startWeekDay; index++) {
       const element = array[index];
       element.style.background = null;
@@ -30,6 +63,17 @@ function loadColors() {
       if (moment(element.date).month() == thisMonth && moment(element.date).year() == today.year()) {
         let day = moment(element.date).date();
        
+        let div = document.createElement('div');
+        div.innerHTML = element.numOfAssignments;
+        div.style.display = 'flex';
+        div.style.justifyContent = 'flex-end';
+        div.style.alignContent = 'center';
+        div.style.flexDirection = 'column';
+        div.style.height = '100%';
+        div.style.paddingBottom = '16px';
+        div.style.boxSizing = 'border-box';
+        array[startWeekDay + day - 1].appendChild(div);
+
         let val = element.score/40 * 1;
 
         array[startWeekDay + day - 1].style.backgroundColor = `#rgba(255, 0, 0, ${val});`;
