@@ -505,7 +505,7 @@ a:hover {
 .mapBody {
     z-index: 2;
     position: absolute;
-    top: 5%;
+    top: 3%;
     left: 5%;
     display: inline;
     width: 90%;
@@ -517,5 +517,10 @@ a:hover {
     border-image-slice: 100%;
     border-image-source: none;
     border-image-width: 1;
-    overflow: scroll;
+}
+
+.mapImage {
+    max-height: 550px; 
+    max-width: 100%; 
+    height: auto;
 }
