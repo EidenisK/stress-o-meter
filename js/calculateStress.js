@@ -22,9 +22,6 @@ async function calculateStress() {
         'orderBy': 'startTime'
     });
 
-    console.log(today.startOf("month").toISOString());
-    console.log(monthEndDate.add(1, "month").toISOString());
-
     if(!response) {
         alert("Something went horribly wrong, let the developers know!");
         return;
