@@ -45,19 +45,6 @@ function loadColors() {
       element.innerHTML = "";
     }
 
-    let dayOfMonth = 1;
-    for (let index = startWeekDay; index < startWeekDay + monthDays; index++) {
-      const element = array[index];
-      element.style.background = null;
-      element.innerHTML = dayOfMonth;
-      dayOfMonth++;
-    }
-    for (let index = startWeekDay + monthDays; index < array.length; index++) {
-      const element = array[index];
-      element.style.background = null;
-      element.innerHTML = "";
-    }
-
     for (let index = 0; index < monthDayInfo.length; index++) {
       const element = monthDayInfo[index];
       if (moment(element.date).month() == thisMonth && moment(element.date).year() == today.year()) {
